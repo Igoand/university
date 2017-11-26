@@ -1,0 +1,303 @@
+\documentclass [a4paper,12pt]{article}
+\textwidth=170mm \evensidemargin 0mm \oddsidemargin 0mm
+\topmargin=-1cm \headsep=0cm \headheight=0cm \footskip=1cm
+\textheight 26cm %\pagestyle{empty}
+\usepackage{polski}
+%\usepackage[Polish]{babel}
+\usepackage[cp1250]{inputenc}
+\usepackage{graphicx}
+%\usepackage{sidecap}
+%\usepackage{wrapfig}
+\usepackage{enumerate}
+\begin{document}
+% !TEX encoding = cp1250
+
+
+%\vspace{1cm}
+\section{Wizualizacja danych - wykresy 2D}
+
+Funkcje steruj¹ce tworzeniem wykresów
+
+\begin{tabular}{p{3.5cm}p{11cm}}
+\hline
+plot(x,y,'KSL') & tworzy wykres 2D wraz z specyfikatorem lini K - kolor, S - symbol, L - linia\\
+figure(nr) & tworzy okno graficzne, w którym mo¿emy rysowaæ \\
+subplot(m,n,active) & tworzy wiele wykresów, u³o¿onych w tablicê o wymiarach m na n, aktywny wykres (ten w którym odbêdzie siê rysowanie) okreœlony jest przez zmienn¹ 'active' \\
+hold on/off  & wstrzymuje rysowanie w danym oknie, na jednym wykresie mo¿emy nanieœæ wiele lini \\
+clf& czyœci okno graficzne\\
+legend(str1,str2,...) & tworzy legende do wykresu\\
+
+ezplot('wyr') & pozwala na podanie wyra¿enia na funkcjê w formie ³añcucha znaków, tworzy wykres dla funkcji postaci $ f(x,y)=0 $ np. 
+\begin{verbatim}
+ezplot('x^2+y-4')
+\end{verbatim} \\
+
+hist(x, n) & Wykreœla histogram dla n przedzia³ów, x-zawiera dane, które bêd¹ umieszczone w n 'przegródkach' \\ 
+stairs(x) & wykres schodkowy \\
+bar(x) & wykres s³upkowy \\
+stem(x) & wykres dla lini pionowych \\
+line(x,y) & rysuje liniê ³aman¹, wyznaczaon¹ przez elementy wektorów x,y \\
+fill(x,y,'c') & rysuje wielok¹t w punktach wyznaczonych przez elementy wektorów x,y, wye³nienie okreœla ostatni parametr \\
+\hline
+\end{tabular}
+
+\subsection{Specyfikatory koloru, symbolu i rodzaju lini}
+\begin{tabular}{p{0.5cm}p{1,5cm}|p{0.5cm}p{3cm}|p{0.5cm}p{3cm}}
+\hline
+\multicolumn{2}{c|}{Kolor} & \multicolumn{2}{c|}{Symbol} & \multicolumn{2}{c}{Rodzaj lini} \\ \hline
+ y & yellow & . & punkt & - & ci¹g³a \\
+ m & magneta& o& kó³ko & :& kropkowana \\
+ c & cyan   & x& x& $-.$ & kropka-kreska \\
+ r & red    & $+$ & plus & $--$& kreskowana \\
+ g & green  & *&  gwiazdka& & \\
+ b & blue   & s& kwadrat& & \\
+w & white  & d& romb& & \\
+ k & black  & v& trójk¹t w dó³& & \\
+ &   & $\wedge $ & trójk¹t w górê & & \\    
+     &   & $<$ &trójk¹t w lewo & & \\   
+        &   & $>$ & trójk¹t w prawo& & \\
+        &   & p & piêciok¹t& & \\												
+        &   & h & szeœciok¹t& & \\       												
+\hline
+\end{tabular}
+
+\subsection{Æwiczenie}
+
+Utwórz na jednym wykresie ci¹g funkcji $f_n(x)$ gdzie $n \in \{1,2,4,8\}$, dla ka¿dego n wybierz inny kolor, symbol oraz rodzaj linii, tak aby mo¿na by³o je ³atwo odró¿niæ, ustaw tak¿e legendê wykresów.
+
+\begin{enumerate}
+	\item $ f_n(x) = \frac{1}{x^n}, \ x \in [\ 1,5 ]$
+	\item $ f_n(x) = \sin(nx), \ x \in [-\pi,\pi]$
+	\item $ f_n(x) = \frac{nx}{1+n^5x^2}, \ x \in [-2,2]$
+
+\end{enumerate}
+
+Aby na jednym wykresie umieœciæ kilka wykresów u¿yj konstrukcji:
+
+\begin{verbatim}
+figure(1)
+hold on
+plot(x,y1,'...');
+plot(x,y2,'...');
+hold off
+
+\end{verbatim}
+
+
+
+\subsection{Æwiczenie}
+Dla przyk³adu 2 z powy¿szego æwiczenia zmieñ w³aœciwoœci wykresu,w oknie z wykresem wybierz opcjê `Edit$\rightarrow$Axes Properties` i zmieñ 
+\begin{enumerate}
+	\item zakresy dla osi x od -4 do 4 a dla osi -2 do 2
+	\item wstaw tytu³  wykresu 'wykresy sinusa'
+	\item podpisz poszczególne osie jako 'x' oraz 'sin(x)'
+	\item poka¿ linie siatki na wykresie dla osi x okreœl linie co 0.5 a dla osi y co 0.2 
+	\item wstaw strza³kê z tekstem wskazuj¹c¹ funkcje 'sin(x)'
+	\item zapisz obraz w formacie .fig (nazwa pliku dowolna)
+	\item zapisz obraz w formacie .png
+	\item zamknij wykres i nastêpnie otwórz uprzednio zapisany obraz w formacie .fig
+\end{enumerate}
+ 
+\subsection{Æwiczenie}
+
+U¿ywaj¹c funkcji ezplot narysuj wykresy:
+
+\begin{enumerate}
+	\item $ x^2+y^2-4=0 $
+	\item Okr¹g o œrodku w punkcie P(2,3) i promieniu 3, dodatkowo zaznacz na wykresie œrodek okrêgu i narysuj promieñ
+	\item Narysuj elipsê o osiach $a=6$, $b=4$, zaznacz punktami ogniska elipsy $F1,F2$
+	
+\end{enumerate}
+
+
+\subsection{Æwiczenie}
+
+W jednym oknie graficznym utwórz 6 wykresów funkcji rozmieszczonych w trzech wierszach i dwóch kolumnach. W pierwszej kolumnie maj¹ znaleŸæ siê funkcje:
+
+\begin{equation}
+f(x)= n*cos(x) \ x \in [-2\pi, 2\pi], \ n \in \{1,2,3\} 
+\label{eq:}
+\end{equation} 
+
+w drugiej natomiast funkcje:
+
+\begin{equation}
+f(x)= cos(n*x) \ x \in [-2\pi, 2\pi], \ n \in \{1,2,3\} 
+\label{eq:}
+\end{equation} 
+
+Funkcje w pierwszej kolumnie powinny byæ narysowane kolorem niebieskim a w drugiej zielonym. Do stworzenia tablicy wykresów u¿yj funkcji subplot(...)
+
+\begin{verbatim}
+figure(1)
+hold on
+subplot(3,2,1);   %aktywne pierwsze okno o wspó³rzêdnych (1,1)
+plot(x,y1,'...');
+subplot(3,2,2);   %aktywne drugie okno o wspó³rzêdnych (1,2)
+plot(x,y2,'...');
+subplot(3,2,3);   %aktywne trzecie okno o wspó³rzêdnych (2,1)
+plot(x,y3,'...');
+.
+.
+.
+hold off
+
+\end{verbatim}
+
+\subsection{Æwiczenie}
+
+Wygeneruj 1000 losowych wartoœci danej cechy o rozk³adzie normalnym, gdzie œrednia m=4 a odchylenie standardowe s=2, narysuj histogram rozk³adu wartoœci tej cechy dla iloœci przedzia³ów $n=5,10,20,100$.
+
+Dane o rozk³adzie normalnym o œredniej m i odchyleniu s mo¿na wygenerowaæ nastêpuj¹co:
+\begin{verbatim}
+r = m+ s*randn(nrPoints,1);
+\end{verbatim}
+
+
+\subsection{Æwiczenie}
+Narysuj trójk¹t o wierzcho³kach w punktach (1,1), (2,2), (3,1) z wype³nieniem w kolorze niebieskim.
+
+\subsection{Æwiczenie*}
+
+Utwórz na jednym wykresie funkcje okresowe  $g(x)$ oraz $f_n(x)$ o okresie $2T=2$,  gdzie $n \in \{1,2,3,4,5\} \ x \in [-4,4]$, dla ka¿dego n wybierz inny kolor, symbol oraz rodzaj lini tak aby mo¿na by³o ³atwo je odró¿niæ.
+
+\begin{equation}
+ g(x) = (-1)^{floor(x)} ;
+\label{eq:}
+\end{equation}
+
+
+\begin{equation}
+		f_n(x) = \frac{4}{\pi} \sum_{k=1}^n \frac{1}{2k-1} \sin\left ( \frac{(2k-1)*\pi x}{T} \right)
+\end{equation}
+
+\noindent PodpowiedŸ:
+
+\begin{enumerate}
+	\item Rozpisz na kartce jak wygl¹da funkcja $f_n(x)$ dla n=1
+	\item Rozpisz na kartce jak wygl¹da funkcja $f_n(x)$ dla n=2
+	\item Dla danego $n>1$, bêdzisz potrzebowa³ wektora z obliczonymi wartoœciami funkcji dla $1...n-1$, po to abyœ móg³ je zsumowaæ. Do sumowania mo¿na u¿yæ funkcji sum(X,dim) (help sum).
+
+\end{enumerate}
+
+
+
+
+
+
+\section{Wizualizacja danych - wykresy 3D}
+
+Funkcje steruj¹ce tworzeniem wykresów
+
+\begin{tabular}{p{4.5cm}p{10cm}}
+\hline
+[X,Y]=meshgrid(r1,r2) & tworzy macierze tworz¹ce dwu-wymiarow¹ siatkê, nak³adaj¹c na siebie X oraz Y otrzymamy wszystkie mo¿liwe kombinacje punktów \\
+mesh(x,y,z) & funkcja rysuje trzy wymiarow¹ powierzchniê opisan¹ równaniem $z=f(x,y)$, x,y-stworzone przy pomocy funkcji meshgrid, z - obliczone wartoœci funkcji \\
+mesh(x,y,z,c) & funkcja rysuje trzy wymiarow¹ powierzchniê opisan¹ równaniem $z=f(x,y)$, dodatkowo okreœlone zostaj¹ indeksy kolorów w aktualnej mapie kolorów \\
+meshc(x,y,z) & wykres podobny do mesh dodane s¹ poziomice \\
+contour3(x,y,z) & wykres konturowy \\
+surf(x,y,z)  & wykres 3D powierzchniowy \\
+surfc(x,y,z) & dzia³a taka jak funkcja surf lecz dodatkowo zaznaczone s¹ poziomice \\
+sufrl & surf + cieniowanie \\
+ezsurf('wyr') & rysuje powierzchnie podan¹ przy pomocy wyra¿enia matematycznego np. ezsurf('x\textasciicircum2+y\textasciicircum2') \\
+ezsurfc('wyr') & dzia³a jak ezsurf + kontury \\
+plot3 & linia w trzech wymiarach\\
+bar3  & wykres s³upkowy w 3D \\
+
+\hline
+\end{tabular}
+
+Warto odwiedziæ stronê http://mathworks.com/discovery/gallery.html
+
+\subsection{Æwiczenie}
+
+Wykonaj poni¿szy kod, przeœledŸ jak wygl¹daj¹ macierze 'x' oraz 'y'. Jaka jest zale¿noœæ pomiêdzy zmiennymi x,y? Gdy na³ozymi x i y na siebie jakie pary punktów otrzymamy?
+\begin{verbatim}
+% generujemy siatkê [-2,2] co 1 dla x i y
+[x,y]=meshgrid(-2:1:2);
+\end{verbatim}
+
+
+Wykonaj poni¿szy kod, przeœledŸ jak wygl¹daj¹ macierze 'x' oraz 'y' po wykonaniu pierwszej instrukcji, zbadaj jak wygl¹da macierz 'z'
+\begin{verbatim}
+% generujemy siatkê [-3,3] co 0.1 dla x i y
+[x,y]=meshgrid(-3:.1:3);
+% obliczamy wartoœæ funkcji
+z=x.^2+y.^2;
+% rysujemy funkcjê
+mesh(x,y,z);
+\end{verbatim}
+
+
+\subsection{Æwiczenie}
+Zmieñ w³aœciwoœci powy¿szego wykresu, ustal opisy osi x,y,z, ustaw tytu³ wykresu zmieñ zakresy dla poszczególnych osi. (podobnie jak dla wykresów 2D)
+
+
+\subsection{Æwiczenie}
+Narysuj wykresy funkcji 
+
+\begin{enumerate}
+	\item $f(x,y)=\sin(x)*\sin(y)*\exp(-x^2-y^2)$ ,$x,y \in [-\pi,\pi]$
+	\item $f(x,y)=\sqrt{x^2+y^2} , \ x,y \in [-8,8]$
+	\item $f(x,y)=\sin(\sqrt{x^2+y^2}) , \ x,y \in [-8,8]$
+	\item $f(x,y)=\sin(\sqrt{x^2+y^2})/x , \ x,y \in [-8,8]$
+	\item $f(x,y)=\cos(x*y) , \ x,y \in [-2\pi,2\pi]$
+	\item $f(x,y)=\exp(\sin(x^2+y^2)) , \ x,y \in [-8,8]$
+	\item $f(x,y)=\sin(x)+\cos(y) , \ x,y \in [-8,8]$
+	
+\end{enumerate}
+
+
+U¿yj funkcji mesh(x,y,z,c), za c spróbuj kolejno podstawiæ x,y,z. Na powy¿szych wykresach wypróbuj dzia³anie funkcji surf, surfc oraz surfl.
+
+
+
+
+\subsection{Æwiczenie}
+Narysuj wykres funkcji dany równaniem parametrycznym dla $ t \in [0,10*\pi]$, u¿yj funkcji plot3
+
+\begin{equation}
+\left \{
+\begin{array}{ll}
+	x=& sin(t) \\
+	y= & cos(t) \\
+	z= & t
+\end{array}\right.
+\label{eq:}
+\end{equation}
+
+\subsection{Æwiczenie}
+U¿ywaj¹c funkcji ezsurf, ezsurfc narysuj wykresy funkcji:
+
+\begin{equation}
+f(x,y)= Re( \arctan(x+iy)), \ x,y \in [-2\pi,2pi]
+\label{eq:}
+\end{equation}
+Re - czêœæ ca³kowita liczby zespolonej, w matlabie realizuje to funkcja 'real'
+
+\begin{equation}
+f(x,y)= \frac{y}{1+x^2+y^2} \ x \in [-4,4],  y\in [-2\pi,2pi]
+\label{eq:}
+\end{equation}
+
+\section{Ciekawostka animowane wykresy}
+
+W tej sekcji wykorzystamy proste skrypty w matlabie (o tworzeniu skryptów wiêcej na przysz³ych æwiczeniach). Z menu matlaba wybierz File$\rightarrow$New$\rightarrow$Script, wklej poni¿szy kod, zapisz plik i uruchom kod naciskaj¹æ F5.
+
+\begin{verbatim}
+close all;
+x=linspace(0,4*pi,100);
+for a=linspace(0,8*pi,400)
+		plot(x,sin(x-a));
+		xlim([min(x) max(x)]);
+		
+		drawnow; % rysuj teraz
+		pause(1/40); %wstrzymaj program
+end
+\end{verbatim}
+
+
+\end{document}
+
+
+

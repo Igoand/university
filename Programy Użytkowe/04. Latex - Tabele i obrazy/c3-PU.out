@@ -1,0 +1,52 @@
+\BOOKMARK [1][-]{section.1}{Zadanie do wykonania}{}% 1
+\BOOKMARK [1][-]{section.2}{Tabele w TeXu}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Tabela bez linii ograniczajacych}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Kod TeXa przed kompilacja}{subsection.2.1}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.2}{pdf po kompilacji}{subsection.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.2}{Tabela z uzyciem linii pionowych}{section.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Kod TeXa przed kompilacja}{subsection.2.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.2}{pdf po kompilacji}{subsection.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.3}{Tabela z uzyciem linii poziomych}{section.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Kod TeXa przed kompilacja}{subsection.2.3}% 10
+\BOOKMARK [3][-]{subsubsection.2.3.2}{pdf po kompilacji}{subsection.2.3}% 11
+\BOOKMARK [2][-]{subsection.2.4}{Tabela z uzyciem linii poziomych i pionowych z wycentrowanymi wartosciami - opcja c}{section.2}% 12
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Kod TeXa przed kompilacja}{subsection.2.4}% 13
+\BOOKMARK [3][-]{subsubsection.2.4.2}{pdf po kompilacji}{subsection.2.4}% 14
+\BOOKMARK [2][-]{subsection.2.5}{Tabela z uzyciem linii poziomych i pionowych z wyr\363wnanymi do lewej strony wartosciami - opcja l}{section.2}% 15
+\BOOKMARK [3][-]{subsubsection.2.5.1}{Kod TeXa przed kompilacja}{subsection.2.5}% 16
+\BOOKMARK [3][-]{subsubsection.2.5.2}{pdf po kompilacji}{subsection.2.5}% 17
+\BOOKMARK [2][-]{subsection.2.6}{Tabela z uzyciem linii poziomych i pionowych z wyr\363wnanymi do prawej strony wartosciami - opcja r}{section.2}% 18
+\BOOKMARK [3][-]{subsubsection.2.6.1}{Kod TeXa przed kompilacja}{subsection.2.6}% 19
+\BOOKMARK [3][-]{subsubsection.2.6.2}{pdf po kompilacji}{subsection.2.6}% 20
+\BOOKMARK [2][-]{subsection.2.7}{Tabela, w kt\363rej uzywamy opcji multirow, pozwalajacej na \233aczenie wierszy kom\363rki}{section.2}% 21
+\BOOKMARK [3][-]{subsubsection.2.7.1}{Kod TeXa przed kompilacja}{subsection.2.7}% 22
+\BOOKMARK [3][-]{subsubsection.2.7.2}{pdf po kompilacji}{subsection.2.7}% 23
+\BOOKMARK [2][-]{subsection.2.8}{Tabela, w kt\363rej uzywamy opcji TINY - zmniejszanie}{section.2}% 24
+\BOOKMARK [3][-]{subsubsection.2.8.1}{Kod TeXa przed kompilacja}{subsection.2.8}% 25
+\BOOKMARK [3][-]{subsubsection.2.8.2}{pdf po kompilacji}{subsection.2.8}% 26
+\BOOKMARK [2][-]{subsection.2.9}{Tabela, w kt\363rej uzywamy srodowiska multicolumn - pozwalajacego na \233aczenie kolumn w kom\363rkach}{section.2}% 27
+\BOOKMARK [3][-]{subsubsection.2.9.1}{Kod TeXa przed kompilacja}{subsection.2.9}% 28
+\BOOKMARK [3][-]{subsubsection.2.9.2}{pdf po kompilacji}{subsection.2.9}% 29
+\BOOKMARK [2][-]{subsection.2.10}{Tabela, uzycie instrukcji cline}{section.2}% 30
+\BOOKMARK [3][-]{subsubsection.2.10.1}{Kod TeXa przed kompilacja}{subsection.2.10}% 31
+\BOOKMARK [3][-]{subsubsection.2.10.2}{pdf po kompilacji}{subsection.2.10}% 32
+\BOOKMARK [2][-]{subsection.2.11}{Okreslanie szerokosci kom\363rki}{section.2}% 33
+\BOOKMARK [3][-]{subsubsection.2.11.1}{Kod TeXa przed kompilacja}{subsection.2.11}% 34
+\BOOKMARK [3][-]{subsubsection.2.11.2}{pdf po kompilacji}{subsection.2.11}% 35
+\BOOKMARK [2][-]{subsection.2.12}{Kolorowanie wierszy}{section.2}% 36
+\BOOKMARK [3][-]{subsubsection.2.12.1}{Kod TeXa przed kompilacja}{subsection.2.12}% 37
+\BOOKMARK [3][-]{subsubsection.2.12.2}{pdf po kompilacji}{subsection.2.12}% 38
+\BOOKMARK [1][-]{section.3}{Figury w TeXu}{}% 39
+\BOOKMARK [1][-]{section.4}{Wyswietlanie grafiki R2D2.jpg}{}% 40
+\BOOKMARK [2][-]{subsubsection.4.0.3}{Kod TeXa przed kompilacja}{section.4}% 41
+\BOOKMARK [3][-]{subsubsection.4.0.4}{pdf po kompilacji}{subsubsection.4.0.3}% 42
+\BOOKMARK [1][-]{section.5}{Wyswietlanie grafiki z odbiciem}{}% 43
+\BOOKMARK [2][-]{subsubsection.5.0.5}{Kod TeXa przed kompilacja}{section.5}% 44
+\BOOKMARK [3][-]{subsubsection.5.0.6}{pdf po kompilacji}{subsubsection.5.0.5}% 45
+\BOOKMARK [1][-]{section.6}{Wyswietlanie wielu obrazk\363w jednoczesnie}{}% 46
+\BOOKMARK [2][-]{subsubsection.6.0.7}{Kod TeXa przed kompilacja}{section.6}% 47
+\BOOKMARK [3][-]{subsubsection.6.0.8}{pdf po kompilacji}{subsubsection.6.0.7}% 48
+\BOOKMARK [1][-]{section.7}{Rysowanie za pomoca krzywych Beziera}{}% 49
+\BOOKMARK [2][-]{subsubsection.7.0.9}{Kod TeXa przed kompilacja}{section.7}% 50
+\BOOKMARK [3][-]{subsubsection.7.0.10}{pdf po kompilacji}{subsubsection.7.0.9}% 51
+\BOOKMARK [1][-]{section.8}{Do wykonania w TeXu}{}% 52

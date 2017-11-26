@@ -1,0 +1,42 @@
+\BOOKMARK [1][-]{section.1}{Zadanie do wykonania}{}% 1
+\BOOKMARK [1][-]{section.2}{Czesc Teoretyczna: Podstawy formatowania tekstu w TeXu}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Klasy dokument\363w w TeX:}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Ramy dokumentu w formacie article - pierwsza kompilacja moze potrwac kilka minut, poniewaz sciagane sa brakujace pakiety}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Kod TeXa}{subsection.2.2}% 5
+\BOOKMARK [2][-]{subsection.2.3}{Podzia\233 dokumentu w formacie article}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.4}{Strona tytu\233owa,}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.5}{Odstepy}{section.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.5.1}{Kod TeXa przed kompilacja}{subsection.2.5}% 9
+\BOOKMARK [3][-]{subsubsection.2.5.2}{pdf po kompilacji}{subsection.2.5}% 10
+\BOOKMARK [2][-]{subsection.2.6}{Uzywanie w tekscie znak\363w specjalnych,}{section.2}% 11
+\BOOKMARK [3][-]{subsubsection.2.6.1}{Kod TeXa przed kompilacja}{subsection.2.6}% 12
+\BOOKMARK [3][-]{subsubsection.2.6.2}{pdf po kompilacji}{subsection.2.6}% 13
+\BOOKMARK [2][-]{subsection.2.7}{Komentarze w TeXu,}{section.2}% 14
+\BOOKMARK [2][-]{subsection.2.8}{Formu\233y matematyczne}{section.2}% 15
+\BOOKMARK [3][-]{subsubsection.2.8.1}{w efekcie daje}{subsection.2.8}% 16
+\BOOKMARK [2][-]{subsection.2.9}{Wypunktowanie i numeracja}{section.2}% 17
+\BOOKMARK [3][-]{subsubsection.2.9.1}{Kod TeXa przed kompilacja}{subsection.2.9}% 18
+\BOOKMARK [3][-]{subsubsection.2.9.2}{pdf po kompilacji}{subsection.2.9}% 19
+\BOOKMARK [3][-]{subsubsection.2.9.3}{Kod TeXa przed kompilacja}{subsection.2.9}% 20
+\BOOKMARK [3][-]{subsubsection.2.9.4}{pdf po kompilacji}{subsection.2.9}% 21
+\BOOKMARK [3][-]{subsubsection.2.9.5}{Kod TeXa przed kompilacja}{subsection.2.9}% 22
+\BOOKMARK [3][-]{subsubsection.2.9.6}{pdf po kompilacji}{subsection.2.9}% 23
+\BOOKMARK [3][-]{subsubsection.2.9.7}{Kod TeXa przed kompilacja}{subsection.2.9}% 24
+\BOOKMARK [3][-]{subsubsection.2.9.8}{pdf po kompilacji}{subsection.2.9}% 25
+\BOOKMARK [2][-]{subsection.2.10}{Wstawianie spisu tresci}{section.2}% 26
+\BOOKMARK [3][-]{subsubsection.2.10.1}{Kod TeXa przed kompilacja}{subsection.2.10}% 27
+\BOOKMARK [3][-]{subsubsection.2.10.2}{pdf po kompilacji}{subsection.2.10}% 28
+\BOOKMARK [2][-]{subsection.2.11}{Tworzenie Bibliografii}{section.2}% 29
+\BOOKMARK [3][-]{subsubsection.2.11.1}{Kod TeXa przed kompilacja}{subsection.2.11}% 30
+\BOOKMARK [3][-]{subsubsection.2.11.2}{Kod TeXa po kompilacji}{subsection.2.11}% 31
+\BOOKMARK [2][-]{subsection.2.12}{Odwo\233ania}{section.2}% 32
+\BOOKMARK [1][-]{section.3}{Zadania}{}% 33
+\BOOKMARK [2][-]{subsection.3.1}{Dokonaj podzia\233u dokumentu na sekcje w klasie article}{section.3}% 34
+\BOOKMARK [2][-]{subsection.3.2}{Dodaj podzia\233 na czesci i rozdzia\233y}{section.3}% 35
+\BOOKMARK [2][-]{subsection.3.3}{Wygeneruj tekst wykorzystujac pakiet lipsum}{section.3}% 36
+\BOOKMARK [2][-]{subsection.3.4}{Listy numerowane}{section.3}% 37
+\BOOKMARK [2][-]{subsection.3.5}{Dodaj wypunktowanie}{section.3}% 38
+\BOOKMARK [2][-]{subsection.3.6}{Dodaj tytu\233 oraz informacje o autorze}{section.3}% 39
+\BOOKMARK [2][-]{subsection.3.7}{Dodaj spis tresci}{section.3}% 40
+\BOOKMARK [2][-]{subsection.3.8}{Dodaj odnosniki do sekcji}{section.3}% 41
+\BOOKMARK [2][-]{subsection.3.9}{Dodaj bibliografie}{section.3}% 42

@@ -1,0 +1,14 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: c3-PU.aux
+Case mismatch error between cite keys TunedIt and tunedit
+---line 85 of file c3-PU.aux
+ : \citation{TunedIt
+ :                  }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys TunedIt and tunedit
+---line 86 of file c3-PU.aux
+ : \citation{TunedIt
+ :                  }
+I'm skipping whatever remains of this command
+I found no \bibdata command---while reading file c3-PU.aux
+I found no \bibstyle command---while reading file c3-PU.aux
+(There were 4 error messages)

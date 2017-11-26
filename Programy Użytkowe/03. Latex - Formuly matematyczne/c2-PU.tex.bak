@@ -1,0 +1,631 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[MeX]{polski}
+\usepackage[cp1250]{inputenc}
+%%\usepackage{polski}
+%%\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{hyperref}
+\usepackage{makeidx}
+\usepackage[tableposition=top]{caption}
+\usepackage{algorithmic}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsmath} %pakiet matematyczny
+\usepackage{amssymb} %pakiet dodatkowych symboli
+\usepackage{xcolor,listings} %listingi
+\usepackage{setspace} %ustawianie interlini, fajnie wygladaja tabele, \singlespacing, \onehalfspacing, and
+
+    \lstset %ustawienia listingów dla c#
+    {
+        %%language={[Sharp]C},
+        backgroundcolor=\color{blue!10},
+        basicstyle=\scriptsize, %wielkoœæ czcionki listingu
+        keywordstyle=\color{blue},
+        identifierstyle=\color{black},
+        breaklines=true
+        literate={i"}{}0
+        {»}{}0
+        {?}{}0
+    }
+
+%%\pagestyle{empty}
+
+\makeindex
+\linespread{1.5}
+
+\begin{document}
+
+\begin{center} %%{\Large POLISH--JAPANISE INSTITUTE OF INFORMATION TECHNOLOGY}
+
+\begin{figure}[here]
+\vspace{6pt}
+\begin{center}
+\includegraphics[scale=0.8]{images.jpg}
+\end{center}
+\vspace{6pt}
+\end{figure}
+
+\vspace{\stretch{1}}{}
+
+\vspace{\stretch{2}}{\Large Programy u¿ytkowe - æwiczenia 2}
+\vspace{\stretch{3}}\end{center}
+
+\begin{figure}[here]
+\vspace{6pt}
+\begin{center}
+\includegraphics[scale=0.8]{images.jpg}
+\end{center}
+\vspace{6pt}
+\end{figure}
+
+\setcounter{page}{4}
+
+\section{Zadanie do wykonania}
+$\bullet$ Stwórz na pulpicie katalog w formacie ImieStudenta\_NazwiskoStudenta
+\\
+$\bullet$ Œci¹gnij plik: http://wmii.uwm.edu.pl/$\sim$artem/TEX/1.tex
+i zapisz plik do utworzonego wczeœniej katalogu, otwórz programem TexWorks i skompiluj, (pierwsza kompilacja mo¿e trwaæ kilka minut)
+\\
+$\bullet$ Przeczytaj Sekcjê drug¹ wprowadzaj¹c¹ do teorii formatowania tekstu w TeXu, podczas czytania sprawdzaj dzia³anie poszczególnych kodów wpisuj¹c je do pliku 1.tex i kompiluj¹c, (w razie problemu z kompilacj¹, lokalizuj b³¹d przegl¹daj¹c raport z kompilacji).
+\\
+$\bullet$ Zapytaj wyk³adowcê o wskazanie numerów wzorów matematycznych do przedstawienia w formacie TeX, znajduj¹cych siê w sekcji 3.
+\\
+\\
+W przypadku, gdy materia³y wprowadzaj¹ce nie s¹ wystarczaj¹ce, przejrzyj kurs online,
+\\
+http://www.latex-kurs.x25.pl/
+
+\section{Formu³y matematyczne w TeXu}
+Przetrenuj u¿ywanie w TeXu matematycznych formu³ i symboli z rozdzia³u 1 po czym wykonaj polecenie z rozdzia³y 2.
+
+
+\subsection{Zapis Matematyczny}
+
+
+\subsubsection{Tryb matematyczny}
+
+Tryb matematyczny `inline` - wzory pisane w lini tekstu wstawiamy przy pomocy \$  wzór \$ (wzór wpisujemy w pojedyncze dolary
+\begin{singlespacing}
+\begin{lstlisting}
+U³amek w  tekœcie $ \frac{1}{x} $ \\
+Oto równanie $c^{2}=a^{2}+b^{2}$
+
+\end{lstlisting}
+\end{singlespacing}
+
+\noindent U³amek w  tekœcie $  \frac{1}{x} $ \\
+Oto równanie $c^{2}=a^{2}+b^{2}$
+
+
+Tryb matematyczny z zastosowaniem podwójnych dolarów \$\$ wzór \$\$
+\begin{singlespacing}
+\begin{lstlisting}
+U³amek  $$ \frac{1}{x} $$ \\
+Oto równanie $$c^{2}=a^{2}+b^{2}$$
+
+\end{lstlisting}
+\end{singlespacing}
+
+\noindent U³amek  $$  \frac{1}{x} $$ \\
+Oto równanie $$c^{2}=a^{2}+b^{2}$$
+
+Tryb matematyczny z u¿yciem struktury 'equation'
+
+\begin{singlespacing}
+\begin{lstlisting}
+U³amek
+
+\begin{equation}
+\frac{1}{x}
+\label{eq:rownanie1}
+\end{equation}
+
+Oto równanie
+
+\begin{equation}
+$$c^{2}=a^{2}+b^{2}$$
+\label{eq:rownanie2}
+\end{equation}
+
+\end{lstlisting}
+\end{singlespacing}
+
+U³amek
+
+\begin{equation}
+\frac{1}{x}
+\label{eq:rownanie1}
+\end{equation}
+
+Oto równanie
+
+\begin{equation}
+c^{2}=a^{2}+b^{2}
+\label{eq:rownanie2}
+\end{equation}
+
+Mo¿na odnieœæ siê do powy¿szych wzorów wykorzystuj¹æ polecenie 'eqref\{etykieta\}'. U³amek ma numer \eqref{eq:rownanie1} a równanie ma numer \eqref{eq:rownanie2}
+
+
+Zad.1.
+
+Przestudiuj trzy powy¿sze przypadki, zwóræ uwagê na ró¿nice w wyœwietlaniu i mo¿liwoœci póŸniejszego odwo³ania siê do równania. Przepisz je do latex'a i spróbuj odnieœæ siê do równania zdefiniowanych przy pomocy 'equation'
+
+
+\subsubsection{Indeks górny i dolny}
+
+Do utworzenia indeksu górnego u¿ywamy operatorów \^ \  oraz podkreœlenia \_
+
+Kod TeXa przed kompilacj¹
+\begin{singlespacing}
+\begin{lstlisting}
+Indeks górny $$x^{y}  \   e^{x} \  2^{e} \  A^{2 \times 2}$$\\
+Indeks dolny $$ x_y \  a_{ij} $$
+\end{lstlisting}
+\end{singlespacing}
+
+
+Wynik po kompilacji
+Indeks górny $$x^{y}  \   e^{x} \  2^{e} \  A^{2 \times 2}$$\\
+Indeks dolny $$ x_y \  a_{ij} \ x_{i}   $$
+
+
+Zad 2.
+Przepisz powy¿sze przyk³ady zwróæ uwagê na odstêpy pomiêdzy wyra¿eniami.
+Napisz formu³y tworz¹ce poni¿sze przyk³ady:
+
+$$ \frac{2^k}{2^{k+2}} $$
+
+$$ 2^{\frac{x^2}{(x+2)(x-2)^3} } $$
+
+$$ \vec{x} = [ x_1, x_2, \dots x_N] $$
+
+\subsubsection{Du¿e operatory matematyczne}
+
+Kod TeXa przed kompilacj¹
+\begin{singlespacing}
+\begin{lstlisting}
+$$\sum \ \sum_{i=1}^{10}x_{i} \ \prod \ \coprod \ \int \ \oint \ \bigcap \ \bigcup \ \bigsqcup \ \bigvee \ \bigwedge \ \bigodot \ \bigotimes \ \bigoplus \ \biguplus$$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$\sum \ \sum_{i=1}^{10}x_{i}  \ \prod \ \coprod \ \int \ \oint \ \bigcap \ \bigcup \ \bigsqcup \ \bigvee \ \bigwedge \ \bigodot \ \bigotimes \ \bigoplus \ \biguplus$$
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$\hat{a} \ \check{b} \ \breve{c} \ \acute{d} \ \grave{e} \ \tilde{f} \ \bar{g} \ \vec{h} \ \dot{m} \ \ddot{n}$$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$\hat{a} \ \check{b} \ \breve{c} \ \acute{d} \ \grave{e} \ \tilde{f} \ \bar{g} \ \vec{h} \ \dot{m} \ \ddot{n}$$
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$\widetilde{aaa} \ \widehat{bbb} \ \overleftarrow{ccc} \ \overrightarrow{ddd} \ \overline{eee} \ \overbrace{fff} \ \underbrace{ggg} \ \underline{hhh} \ \sqrt{iii} \ \sqrt[n]{jjj} \ \frac{kkkk}{}$$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$\widetilde{aaa} \ \widehat{bbb} \ \overleftarrow{ccc} \ \overrightarrow{ddd} \ \overline{eee} \ \overbrace{fff} \ \underbrace{ggg} \ \underline{hhh} \ \sqrt{iii} \ \sqrt[n]{jjj} \ \frac{kkkk}{}$$
+
+
+
+\subsection{Alfabet Grecki}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$\Gamma \ \Delta \ \Theta \ \Xi \ \Pi \ \Sigma \ \Upsilon \ \Phi \ \Psi \ \Omega$$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$\Gamma \ \Delta \ \Theta \ \Xi \ \Pi \ \Sigma \ \Upsilon \ \Phi \ \Psi \ \Omega$$
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$\alpha \ \beta \ \gamma \ \delta \ \epsilon \ \varepsilon \ \zeta \ \eta \ \theta \ \vartheta \ \iota \ \kappa \ \lambda \ \mu \ \nu \ \xi \ o \ \pi \ \varpi \ \rho \ \varrho \ \sigma \ \varsigma \ \tau \ \upsilon \ \phi \ \varphi \ \chi \ \psi \ \omega \ \digamma \ \beth \ \gimel \ \daleth$$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$\alpha \ \beta \ \gamma \ \delta \ \epsilon \ \varepsilon \ \zeta \ \eta \ \theta \ \vartheta \ \iota \ \kappa \ \lambda \ \mu \ \nu \ \xi \ o \ \pi \ \varpi \ \rho \ \varrho \ \sigma \ \varsigma \ \tau \ \upsilon \ \phi \ \varphi \ \chi \ \psi \ \omega \ \digamma \ \beth \ \gimel \ \daleth$$
+
+\subsection{Symbole}
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$\aleph \ \hbar \ \imath \ \jmath \ \ell \ \wp \ \Re \ \Im \ \prime \ \emptyset \ \angle \ \infty \ \partial \ \nabla \ \triangle \ \forall \ \exists \ \neg \ \surd \ \top \ \bot \ \backslash$$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$\aleph \ \hbar \ \imath \ \jmath \ \ell \ \wp \ \Re \ \Im \ \prime \ \emptyset \ \angle \ \infty \ \partial \ \nabla \ \triangle \ \forall \ \exists \ \neg \ \surd \ \top \ \bot \ \backslash$$
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$\flat \ \natural \ \sharp \ \| \ \clubsuit \ \diamondsuit \ \heartsuit \ \spadesuit \ \dag \ \ddag \ \S \ \P \ \copyright \ \pounds \ \checkmark \ \maltese \ \circledR \ \yen \ \ulcorner \ \urcorner \ \llcorner \ \lrcorner \ \diamond \ \mho \ \Box \ \cdot \ \ldots \ \cdots \ \vdots \ \ddots$$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$\flat \ \natural \ \sharp \ \| \ \clubsuit \ \diamondsuit \ \heartsuit \ \spadesuit \ \dag \ \ddag \ \S \ \P \ \copyright \ \pounds \ \checkmark \ \maltese \ \circledR \ \yen \ \ulcorner \ \urcorner \ \llcorner \ \lrcorner \ \diamond \ \mho \ \Box \ \cdot \ \ldots \ \cdots \ \vdots \ \ddots$$
+
+\subsection{Formatowanie}
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$\emph{Przyk³adowa fraza} \ \textrm{Przyk³adowa fraza} \ \textbf{Przyk³adowa fraza}$$
+$$\textsf{Przyk³adowa fraza} \ \texttt{Przyk³adowa fraza} \ \textmd{Przyk³adowa fraza}$$
+$$\textit{Przyk³adowa fraza} \ \textsc{Przyk³adowa fraza} \ \textsl{Przyk³adowa fraza}$$
+$$\verb"Przyk³adowa fraza"$$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$\emph{Przyk³adowa fraza} \ \textrm{Przyk³adowa fraza} \ \textbf{Przyk³adowa fraza}$$
+$$\textsf{Przyk³adowa fraza} \ \texttt{Przyk³adowa fraza} \ \textmd{Przyk³adowa fraza}$$
+$$\textit{Przyk³adowa fraza} \ \textsc{Przyk³adowa fraza} \ \textsl{Przyk³adowa fraza}$$
+$$\verb"Przyk³adowa fraza"$$
+
+\subsection{Nawiasy}
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$( \ [ \ \{ \ \lfloor \ \lceil \ \langle \ / \ | \ ) \ ] \ \} \ \rfloor \ \rceil \ \rangle \ \backslash \ \| \ \uparrow \ \downarrow \ \updownarrow \ \Uparrow \ \Downarrow \ \Updownarrow \ \quad \ \qquad \ \! \ \, \ \: \ \; \ \left \ \right $$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$( \ [ \ \{ \ \lfloor \ \lceil \ \langle \ / \ | \ ) \ ] \ \} \ \rfloor \ \rceil \ \rangle \ \backslash \ \| \ \uparrow \ \downarrow \ \updownarrow \ \Uparrow \ \Downarrow \ \Updownarrow \ \quad \ \qquad \ \! \ \, \ \: \ \;$$
+
+\subsection{Znaki}
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$< \ \leq \ \prec \ \preceq \ \ll \ \subset \ \subseteq \ \sqsubseteq \ \in \ \vdash \ > \ \geq \ \succ \ \succeq \ \gg \ \supset \ \supseteq \ \sqsupseteq \ \ni \ \dashv $$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$< \ \leq \ \prec \ \preceq \ \ll \ \subset \ \subseteq \ \sqsubseteq \ \in \ \vdash \ > \ \geq \ \succ \ \succeq \ \gg \ \supset \ \supseteq \ \sqsupseteq \ \ni \ \dashv $$
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$\equiv \ \sim \ \simeq \ \asymp \ \approx \ \cong \ \neq \ \doteq \ \models \ \perp \ \mid \ \parallel \ \smile \ \frown \ \propto \ \bowtie \ \lhd \ \rhd \ \unlhd \ \unrhd $$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$\equiv \ \sim \ \simeq \ \asymp \ \approx \ \cong \ \neq \ \doteq \ \models \ \perp \ \mid \ \parallel \ \smile \ \frown \ \propto \ \bowtie \ \lhd \ \rhd \ \unlhd \ \unrhd $$
+
+\subsection{Inne symbole}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$\pm \ \mp \ \times \ \div \ \ast \ \star \ \circ \ \bullet \ \cdot \ \cap \ \cup \ \uplus \ \sqcap \ \sqcup \ \vee \ \wedge $$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$\pm \ \mp \ \times \ \div \ \ast \ \star \ \circ \ \bullet \ \cdot \ \cap \ \cup \ \uplus \ \sqcap \ \sqcup \ \vee \ \wedge $$
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$\setminus \ \wr \ \diamond \ \bigtriangleup \ \bigtriangledown \ \triangleleft \ \triangleright \ \oplus \ \ominus \ \otimes \ \oslash \ \odot \ \bigcirc \ \dagger \ \ddagger \ \amalg \ \nearrow \ \searrow \ \nwarrow \ \swarrow \ \longrightarrow \ \longleftarrow \ \longleftrightarrow \ \longmapsto \ \Longrightarrow \ \Longleftarrow \ \Longleftrightarrow$$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$\setminus \ \wr \ \diamond \ \bigtriangleup \ \bigtriangledown \ \triangleleft \ \triangleright \ \oplus \ \ominus \ \otimes \ \oslash \ \odot \ \bigcirc \ \dagger \ \ddagger \ \amalg \ \nearrow \ \searrow \ \nwarrow \ \swarrow \ \longrightarrow \ \longleftarrow \ \longleftrightarrow \ \longmapsto \ \Longrightarrow \ \Longleftarrow \ \Longleftrightarrow$$
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$\leftarrow \ \Leftarrow \ \rightarrow \ \Rightarrow \ \leftrightarrow \ \Leftrightarrow \ \mapsto \ \hookleftarrow \ \leftharpoonup \ \leftharpoondown \ \rightleftharpoons \ \hookrightarrow \ \rightharpoonup \ \rightharpoondown \ \uparrow \ \Uparrow \ \downarrow \ \Downarrow \ \updownarrow \ \Updownarrow \ \leftleftarrows \ \rightrightarrows \ \leftrightarrows \ \rightleftarrows \ \Lleftarrow \ \Rrightarrow \ \leftrightharpoons \ \rightleftharpoons$$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$\leftarrow \ \Leftarrow \ \rightarrow \ \Rightarrow \ \leftrightarrow \ \Leftrightarrow \ \mapsto \ \hookleftarrow \ \leftharpoonup \ \leftharpoondown \ \rightleftharpoons \ \hookrightarrow \ \rightharpoonup \ \rightharpoondown \ \uparrow \ \Uparrow \ \downarrow \ \Downarrow \ \updownarrow \ \Updownarrow \ \leftleftarrows \ \rightrightarrows \ \leftrightarrows \ \rightleftarrows \ \Lleftarrow \ \Rrightarrow \ \leftrightharpoons \ \rightleftharpoons$$
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$\twoheadleftarrow \ \twoheadrightarrow \ \leftarrowtail \ \rightarrowtail \ \looparrowleft \ \looparrowright \ \curvearrowleft \ \curvearrowright \ \circlearrowleft \ \circlearrowright \ \dashleftarrow \ \dashrightarrow \ \Lsh \ \Rsh \ \upuparrows \ \downdownarrows \ \upharpoonleft \ \upharpoonright \ \downharpoonleft \ \downharpoonright \ \rightsquigarrow \ \leftrightsquigarrow \ \multimap \ \nleftarrow \ \nrightarrow \ \nLeftarrow \ \nRightarrow \ \nleftrightarrow \ \nLeftrightarrow$$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$\twoheadleftarrow \ \twoheadrightarrow \ \leftarrowtail \ \rightarrowtail \ \looparrowleft \ \looparrowright \ \curvearrowleft \ \curvearrowright \ \circlearrowleft \ \circlearrowright \ \dashleftarrow \ \dashrightarrow \ \Lsh \ \Rsh \ \upuparrows \ \downdownarrows \ \upharpoonleft \ \upharpoonright \ \downharpoonleft \ \downharpoonright \ \rightsquigarrow \ \leftrightsquigarrow \ \multimap \ \nleftarrow \ \nrightarrow \ \nLeftarrow \ \nRightarrow \ \nleftrightarrow \ \nLeftrightarrow$$
+
+\subsection{U¿ycie struktury array}
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+$$54) e'_{ij}=
+\left\{
+  \begin{array}{c}
+    e_{ij}\ {\rm gdy}\ d(x_i) \neq d(x_j) \\
+    \phi\ {\rm gdy}\ d(x_i)=d(x_j). \\
+  \end{array}
+  \right.$$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+$$54) e'_{ij}=
+\left\{
+  \begin{array}{c}
+   e_{ij}\ {\rm gdy}\ d(x_i) \neq d(x_j) \\
+    \phi\ {\rm gdy}\ d(x_i)=d(x_j). \\
+  \end{array}
+  \right.$$
+
+\subsection{U¿ycie œrodowiska algorythmic}
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{algorithmic}
+\STATE{22)Procedure}
+\STATE{Input data}
+\STATE{$A' \leftarrow \emptyset$}
+\STATE{$iter \leftarrow 0$}
+\FOR {i=1,2,...,card\{A\}}
+\FOR {j=1,2,...,k}
+\STATE{$S^{c_j}(a)=S_{i}^{c_j}(a)$}
+\IF{$a \not \in A'$}
+\item{$A' \leftarrow\ a$}
+\item{$iter \leftarrow iter+1$}
+\IF{$iter = fixed\ number\ of\ the\ best\ genes$}
+\item{BREAK}
+\ENDIF
+\ENDIF
+\ENDFOR
+\IF{$iter = fixed\ number\ of\ the\ best\ genes$}
+\item{BREAK}
+\ENDIF
+\ENDFOR
+\RETURN{$A'$}
+\end{algorithmic}
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+\begin{algorithmic}
+\STATE{22)Procedure}
+\STATE{Input data}
+\STATE{$A' \leftarrow \emptyset$}
+\STATE{$iter \leftarrow 0$}
+\FOR {i=1,2,...,card\{A\}}
+\FOR {j=1,2,...,k}
+\STATE{$S^{c_j}(a)=S_{i}^{c_j}(a)$}
+\IF{$a \not \in A'$}
+\item{$A' \leftarrow\ a$}
+\item{$iter \leftarrow iter+1$}
+\IF{$iter = fixed\ number\ of\ the\ best\ genes$}
+\item{BREAK}
+\ENDIF
+\ENDIF
+\ENDFOR
+\IF{$iter = fixed\ number\ of\ the\ best\ genes$}
+\item{BREAK}
+\ENDIF
+\ENDFOR
+\RETURN{$A'$}
+\end{algorithmic}
+
+\subsection{U¿ycie œrodowiska equation}
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{equation}
+Inf_A(x)=\{(a=a(x)):a\in A\},
+\end{equation}
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+\begin{equation}
+Inf_A(x)=\{(a=a(x)):a\in A\},
+\end{equation}
+
+\section{Polecenie do wykonania}
+Zapytaj wyk³adowcê o wskazanie numerów wzorów matematycznych do przedstawienia w formacie TeX.
+
+\begin{equation}
+(a_1=a_1(x)) \wedge (a_2=a_2(x)) \wedge \ldots \wedge  (a_k=a_k(x)) \Rightarrow (d=d(u))
+\end{equation}
+
+\begin{equation}
+[x]_A=\{y\in U: a(x)=a(y), \forall a \in A\}, \mbox{ where the central object $x \in U$}
+\end{equation}
+
+\begin{equation}
+g(u,r)=\{v \in U: \frac{card\{IND(u,v)\}}{card\{A\}|}\geq r\}
+\end{equation}
+
+\begin{equation}
+\mbox{ where, } IND(u,v)=\{a \in A: a(u)=a(v)\}
+\end{equation}
+
+\begin{equation}
+T:[0,1]\times [0,1]\rightarrow [0,1],
+\end{equation}
+
+\begin{equation}
+x\Rightarrow_T y\geq r \mbox{ if and only if } T(x, r)\leq y
+\end{equation}
+
+\begin{equation}
+x\Rightarrow_T y = max\{r: T(x, r)\leq y\}
+\end{equation}
+
+\begin{equation}\label{inter}
+\mu_T(x, y, r) \mbox{ if and only if } x\Rightarrow_T y \geq r
+\end{equation}
+
+\begin{equation}
+dis_{\varepsilon}(u,v)=\frac{|\{a\in A: ||a(u)-a(v)||\geq \varepsilon\}|}{|A|}
+\end{equation}
+
+\begin{equation}
+ind_{\varepsilon}(u,v)=\frac{|\{a\in A: ||a(u)-a(v)|| < \varepsilon \}|}{|A|}
+\end{equation}
+
+\begin{equation}
+Param(v_d)=\sum_{\{v \in U_{trn}: d(v)=v_d\}}w(v, u, \varepsilon)
+\end{equation}
+
+\begin{equation}
+Param(v_d)={\sum_{\{v_p \in U_{trn}: d(v_p)=v_d\}}w(u_q,v_p)},
+\end{equation}
+
+\begin{equation}\label{fextraction2}
+S^{c_i}(a)=\frac{(\overline{C}^{a}_{i}-\hat{C}^{a}_{i})^{2}}{Z_{\overline{C}^{a^2}_{i}}+Z_{\hat{C}^{a^2}_{i}}}, a \in A.
+\end{equation}
+
+\begin{equation}
+{C}^{a}_{i}=\{a(u):u \in U\ and\ d(u)=c_{i}\}.
+\end{equation}
+
+\begin{equation}\label{fextraction3}
+F_{c_{i}}(a)=\frac{MSTR_{c_{i}}(a)}{MSE_{c_{i}}(a)}
+\end{equation}
+
+\begin{equation}
+C^{a}_{i}=\{a(u):u \in U\ and\ d(u)=c_{i}\}
+\end{equation}
+
+\begin{equation}
+MSTR_{c_{i}}(a)=card\{C_i^a\}*(\bar{C}_i^a-\hat{C}_i^a)^2
+\end{equation}
+
+\begin{equation}\label{fextraction2}
+A_{c_i}(a)=C^{a}_{i} \wedge_{\varepsilon} \{U \backslash C^{a}_{i}\}
+\end{equation}
+
+\begin{tiny}
+\begin{equation}
+\frac{card\{a(u) \in C^a_i:\frac{|a(u)-\hat{C}^a_i|}{train_a} > \varepsilon\}}{card\{C^a_i\}}
+\end{equation}
+\end{tiny}
+
+\begin{equation}
+Balanced.acc=\frac{acc_{c_1}+acc_{c_2}+...+acc_{c_k}}{k}
+\end{equation}
+
+\begin{equation}
+Param(v_d)=\sum_{\{v \in U_{trn}: d(v)=v_d\}}w(v, u, \varepsilon)
+\end{equation}
+
+\begin{tiny}
+\begin{equation}
+\frac{card\{a(u) \in C^a_i:\frac{|a(u)-\hat{C}^a_i|}{train_a} > \varepsilon\}}{card\{C^a_i\}}
+\end{equation}
+\end{tiny}
+
+\begin{equation}
+MSE_{c_{i}}(a)=\frac{\sum_{j=1}^{card\{C_i^a\}}(a(u_j)-\bar{C_i^a})^2}{card\{C_i^a\}},\ {\rm where}\ u_j \in C^a_i, i=1,2,...,card\{C^a_i\}
+\end{equation}
+
+\begin{equation}
+C^{a}_{i}=\{a(u):u \in U\ and\ d(u)=c_{i}\}, \hat{C}^{a}_{i}=\frac{\{a(v): v \in U\ and\ d(v) \neq c_{i}\}}{card\{U\}-card\{C_i^a\}}.
+\end{equation}
+
+\begin{tiny}
+\begin{equation}
+C^{a}_{i} \wedge_{\varepsilon} \{U \backslash C^{a}_{i}\} = \frac{card\{a(u) \in C^a_i: \exists a(v) \in \{U \backslash C^a_i\} ;\frac{|a(u)-a(v)|}{train_a} \leq \varepsilon\} + card\{a(v) \in \{U \backslash C^a_i\}: \exists a(u) \in  C^a_i ;\frac{|a(u)-a(v)|}{train_a} \leq \varepsilon\}}{card\{U\}}
+\end{equation}
+\end{tiny}
+
+\begin{equation}
+c_{ij}=
+\left\{
+  \begin{array}{c}
+    1,\ {\rm if}\ \frac{card\{IND(u_i,u_j)\}}{card\{A\}} \geq r_{gran} \\
+    0,\ {\rm otherwise} \\
+  \end{array}
+  \right.
+\end{equation}
+
+\begin{equation}
+C^{a}_{i} \wedge_{\varepsilon} C^{a}_{j} = \frac{card\{a(u) \in C^a_i: \exists a(v) \in C^a_j; \frac{|a(u)-a(v)|}{train_{C^a_i,C^a_j}} \leq \varepsilon\} + card\{a(v) \in C^a_j; \frac{|a(v)-a(u)|}{train_{C^a_i,C^a_j}} \leq \varepsilon\} }{card\{C^a_i\}}
+\end{equation}
+%\end{tiny}
+
+%\begin{tiny}
+\begin{equation}
+\frac{card\{a(u) \in C^a_i:\frac{|a(u)-\overline{C}^a_j|}{train_{C^a_i,C^a_j}}\leq\varepsilon\}+card\{a(v) \in C^a_j:\frac{|a(v)-\overline{C}^a_i|}{train_{C^a_i,C^a_j}}\leq\varepsilon\}}{card\{C^a_i\}+card\{C^a_j\}}
+\end{equation}
+
+\begin{equation}
+C^{a}_{i}=\{a(u):u \in U\ and\ d(u)=c_{i}\}, \hat{C}^{a}_{i}=\frac{\{a(v): v \in U\ and\ d(v) \neq c_{i}\}}{card\{U\}-card\{C_i^a\}}.
+\end{equation}
+
+\begin{tiny}
+\begin{equation}
+C^{a}_{i} \wedge_{\varepsilon} \{U \backslash C^{a}_{i}\} = \frac{card\{a(u) \in C^a_i: \exists a(v) \in \{U \backslash C^a_i\} ;\frac{|a(u)-a(v)|}{train_a} \leq \varepsilon\} + card\{a(v) \in \{U \backslash C^a_i\}: \exists a(u) \in  C^a_i ;\frac{|a(u)-a(v)|}{train_a} \leq \varepsilon\}}{card\{U\}}
+\end{equation}
+\end{tiny}
+
+\begin{equation}
+\overline{C}^{a}_{i}=\frac{\{\sum a(u):u \in U\ and\ d(u)=c_{i}\}}{card\{C_i^a\}},
+\hat{C}^{a}_{i}=\frac{\{\sum a(v): v \in U\ and\ d(v) \neq c_{i}\}}{card\{U\}-card\{C_i^a\}}.
+\end{equation}
+
+\begin{equation}
+Z_{\overline{C}^{a^2}_{i}}=\frac{\sum_{a(u)\in C_i^a}(a(u)-\overline{C}_i^a)^2}{card\{C_i^a\}},
+Z_{\hat{C}^{a^2}_{i}}=\frac{\sum_{a(v)\in U \setminus C_i^a}(a(v)-\hat{C}_i^a)^2}{card\{U\}-card\{C_i^a\}}
+\end{equation}\label{geny}
+
+\begin{equation}
+w(u_q,v_p)=w(u_q,v_p)+\frac{|a(u_q)-a(v_p)|}{(max\_attr_{a} - min\_attr_{a})*(\varepsilon+\frac{|a(u_q)-a(v_p)|}{max\_attr_{a} - min\_attr_{a}})} \mbox{ i. e.,}
+\end{equation}
+
+\begin{equation}
+w(u_q,v_p)=w(u_q,v_p)+\frac{|a(u_q)-a(v_p)|}{(max\_attr_{a} - min\_attr_{a})*\varepsilon+|a(u_q)-a(v_p)|}
+\end{equation}
+
+\begin{equation}
+w(u_q,v_p)=w(u_q,v_p)+\frac{|a(u_q)-a(v_p)|}{(max\_attr_{a} - min\_attr_{a})*\varepsilon}
+\end{equation}
+
+\begin{equation}
+c'_{ij}=
+\left\{
+  \begin{array}{c}
+    c_{ij}\ {\rm gdy}\ d(x_i) \neq d(x_j) \\
+    \phi\ {\rm gdy}\ d(x_i)=d(x_j). \\
+  \end{array}
+  \right.
+\end{equation}
+
+\begin{algorithmic}
+\STATE{Procedure}
+\STATE{Input data}
+\STATE{$A' \leftarrow \emptyset$}
+\STATE{$iter \leftarrow 0$}
+\FOR {i=1,2,...,card\{A\}}
+\FOR {j=1,2,...,k}
+\STATE{$F^{c_j}(a)=F_{i}^{c_j}(a)$}
+\IF{$a \not \in A'$}
+\item{$A' \leftarrow\ a$}
+\item{$iter \leftarrow iter+1$}
+\IF{$iter = fixed\ number\ of\ the\ best\ genes$}
+\item{BREAK}
+\ENDIF
+\ENDIF
+\ENDFOR
+\IF{$iter = fixed\ number\ of\ the\ best\ genes$}
+\item{BREAK}
+\ENDIF
+\ENDFOR
+\RETURN{$A'$}
+\end{algorithmic}
+
+$$S_1^{c_1}(a)>S_2^{c_1}(a)>...>S_{card\{A\}}^{c_1}(a)$$
+
+$$S_1^{c_2}(a)>S_2^{c_2}(a)>...>S_{card\{A\}}^{c_2}(a)$$
+
+$$\vdots$$
+
+$$S_1^{c_k}(a)>S_2^{c_k}(a)>...>S_{card\{A\}}^{c_k}(a)$$
+
+W przypadku, gdy materia³y wprowadzaj¹ce nie s¹ wystarczaj¹ce, przejrzyj kurs online,
+\\
+http://www.latex-kurs.x25.pl/
+
+\end{document}

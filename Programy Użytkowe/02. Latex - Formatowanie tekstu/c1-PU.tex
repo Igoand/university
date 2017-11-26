@@ -1,0 +1,456 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[MeX]{polski}
+\usepackage[cp1250]{inputenc}
+%%\usepackage{polski}
+%%\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{hyperref}
+\usepackage{makeidx}
+\usepackage[tableposition=top]{caption}
+\usepackage{algorithmic}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsmath} %pakiet matematyczny
+\usepackage{amssymb} %pakiet dodatkowych symboli
+\usepackage{xcolor,listings} %listingi
+\usepackage{setspace} %ustawianie interlini, fajnie wygladaja tabele, \singlespacing, \onehalfspacing, and
+
+    \lstset %ustawienia listingów dla c#
+    {
+        %%language={[Sharp]C},
+        backgroundcolor=\color{blue!10},
+        basicstyle=\scriptsize, %wielkoœæ czcionki listingu
+        keywordstyle=\color{blue},
+        identifierstyle=\color{black},
+        breaklines=true
+        literate={i"}{}0
+        {»}{}0
+        {?}{}0
+    }
+
+%%\pagestyle{empty}
+
+\makeindex
+\linespread{1.5}
+
+\begin{document}
+
+\begin{center} %%{\Large POLISH--JAPANISE INSTITUTE OF INFORMATION TECHNOLOGY}
+
+\begin{figure}[here]
+\vspace{6pt}
+\begin{center}
+\includegraphics[scale=0.8]{images.jpg}
+\end{center}
+\vspace{6pt}
+\end{figure}
+
+\vspace{\stretch{1}}{}
+
+\vspace{\stretch{2}}{\Large Programy u¿ytkowe - æwiczenia 1}
+\vspace{\stretch{3}}\end{center}
+
+\begin{figure}[here]
+\vspace{6pt}
+\begin{center}
+\includegraphics[scale=0.8]{images.jpg}
+\end{center}
+\vspace{6pt}
+\end{figure}
+
+\setcounter{page}{4}
+
+
+
+\section{Zadanie do wykonania}
+$\bullet$ Stwórz na pulpicie katalog w formacie ImieStudenta\_NazwiskoStudenta
+\\
+$\bullet$ Œci¹gnij plik: https://www.dropbox.com/s/m1wotge8l9e126c/1.tex 
+i zapisz plik do utworzonego wczeœniej katalogu, otwórz programem TexWorks i skompiluj, (pierwsza kompilacja mo¿e trwaæ kilka minut)
+\\
+$\bullet$ Przeczytaj Sekcjê drug¹ wprowadzaj¹c¹ do teorii formatowania tekstu w TeXu, podczas czytania sprawdzaj dzia³anie poszczególnych kodów wpisuj¹c je do pliku 1.tex i kompiluj¹c, (w razie problemu z kompilacj¹, lokalizuj b³¹d przegl¹daj¹c raport z kompilacji).
+\\
+$\bullet$ Sformatuj do postaci TeXa wskazane przez wyk³adowcê strony pdf wybranego artyku³u, np.
+\\
+https://www.cbd.int/doc/legal/cbd-en.pdf
+\\
+\\
+W przypadku, gdy materia³y wprowadzaj¹ce nie s¹ wystarczaj¹ce, przejrzyj kurs online,
+\\
+http://www.latex-kurs.x25.pl/
+
+\section{Czêœæ Teoretyczna: Podstawy formatowania tekstu w TeXu}
+
+\subsection{Klasy dokumentów w TeX:}
+article	 -	artyku³y,
+\\
+report	 -	d³u¿sze prace,
+\\
+book	 -	ksi¹¿ki,
+\\
+slides	 -	przezrocza,
+\\
+letter	 -	listy.
+\\
+\\
+Aby u¿yæ wybranej klasy dokumentu, nale¿y wpisaæ do $\backslash$documentclass[opcja]\{klasa\} za s³owo klasa, nazwê klasy.
+Pozwalaj¹ one na zdefiniowanie podstawowych ustawieñ zwi¹zanych z dokumentem: marginesy, odstêpy, czcionki itp.
+\\
+\\
+Podaj¹c wiêcej ni¿ jedn¹ opcjê oddzielamy je przecinkami. Wa¿niejsze opcje klas dokumentów:
+\\
+$\bullet$ 10pt, 11pt, 12pt - ustalamy wielkoœæ czcionki dla tekstu dokumentu. Domyœln¹ wartoœci¹ jest 10 pt.
+\\
+$\bullet$ a4paper, letterpaper, itd. - ustalamy format papieru, W domyœle stosowany jest letterpaper. Dopuszczalne wartoœci to: a5paper, b5paper, executivepaper, legalpaper.
+\\
+$\bullet$ fleqn	 -	Sk³adanie wyeksponowanych wzorów matematycznych od lewego marginesu zamiast domyœlnego centrowania.
+\\
+$\bullet$ leqno	 -	Umieszczanie numerów wzorów matematycznych na lewym marginesie zamiast domyœlnie na prawym.
+\\
+$\bullet$ titlepage, notitlepage	 -	Pierwsza powoduje, ¿e LaTex sk³ada tytu³ (instrukcja maketitle) oraz streszczenie (instrukcja abstract) na oddzielnej stronie, druga rozpoczyna sk³ad tekstu na stronie tytu³owej. W klasie article domyœlnie nie s¹ sk³adane na oddzielnych stronach; w stylu report i book s¹.
+\\
+twocolumn	 -	Sk³ad dwukolumnowy.
+\\
+oneside, twoside	 -	Druk na jednej lub na dwóch stronach kartki papieru. W klasach article i report domyœln¹ opcj¹ jest oneside, natomiast w klasie book – twoside. W³¹czenie opcji oneside powoduje przy okazji, ze LaTex nie wyrównuje wysokoœci kolejnych stron, dopuszczaj¹c pewn¹ ich zmiennoœæ.
+\\
+$\bullet$ openright, openany	 -	Wybranie pierwszej opcji powoduje, ¿e tytu³y rozdzia³ów bêd¹ umieszczane na stronach nieparzystych. W klasie article opcja nie ma znaczenia poniewa¿ w tej klasie nie jest zdefiniowane pojêcie rozdzia³u (chapter). W klasie report domyœln¹ wartoœci¹ jest openany, w klasie book – openright.
+
+\subsection{Ramy dokumentu w formacie article - pierwsza kompilacja mo¿e potrwaæ kilka minut, poniewa¿ œci¹gane s¹ brakuj¹ce pakiety}
+\subsubsection{Kod TeXa}
+\begin{singlespacing}
+\begin{lstlisting}
+\documentclass{article}
+\usepackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{hyperref}
+\usepackage{makeidx}
+\usepackage[tableposition=top]{caption}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multirow}
+\usepackage{amsmath} %pakiet matematyczny
+\usepackage{amssymb} %pakiet dodatkowych symboli
+\begin{document}
+Tu umieszczamy kod TeXa, który bêdzie kompilowany,
+\end{document}
+\end{lstlisting}
+\end{singlespacing}
+
+\subsection{Podzia³ dokumentu w formacie article}
+
+$\backslash$section\{nazwa seksji\} \\
+$\backslash$paragraph\{nazwa paragrafu\} \\
+$\backslash$subsection\{nazwa podsekcji\} \\
+$\backslash$subparagraph\{nazwa pod-paragrafu\} \\
+$\backslash$subsubsection\{\} \\
+$\backslash$appendix
+\\
+\\
+W klasie report i book mo¿na u¿yæ dwóch dodatkowych instrukcji:
+\\
+$\backslash$part\{nazwa czêœci\}\\
+$\backslash$chapter\{nazwa rozdzia³u\}
+
+\subsection{Strona tytu³owa,}
+
+LaTeX tworzy stronê tytu³ow¹ w wyniku wykonania instrukcji:
+\\
+$\backslash$maketitle
+\\
+która, powinna byæ umieszczona po $\backslash$begin\{document\}.
+\\
+Zawartoœæ strony tytu³owej ustalaj¹ polecenia (wpisane przed begin document) tzw. metadane dokumentu:
+\\
+$\backslash$title\{\}
+\\
+$\backslash$author\{\}
+\\
+$\backslash$date\{\}
+
+
+
+
+
+
+\subsection{Odstêpy}
+Do nowego wiersza mo¿emy przejœæ u¿ywaj¹c dwóch znaków back slash $\backslash$$\backslash$,
+jednak ten zapis nie jest dozwolony w ca³ym dokumencie, np. po i przed nag³ówkami rozdzia³ów i podrozdzia³ów u¿ycie podwójnego backslasha spowoduje b³¹d.
+
+Gdy chcemy wymusiæ przejœcie do nowego wiersza u¿ywamy polecenia $\backslash$newline, natomiast przejœcie do nowej strony mo¿e byæ zrealizowane poleceniami $\backslash$newpage oraz $\backslash$clearpage.
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+
+\begin{singlespacing}
+\begin{lstlisting}
+W TeXu wielokrotna spacja jest traktowana jako pojedyncza,
+     s³owo1                s³owo2                  s³owo3
+
+Je¿eli zostawimy wolny wiersz miêdzy zdaniami, nast¹pi wciêcie drugiego zdania.
+
+Aby zapobiec wciêciu u¿ywamy polecenia,
+
+\noindent Zdanie bez wciêcia, pomimo zostawienia wolnego wiersza.
+\\
+\indent Gdy chcemy wymusiæ wciêcie zdania u¿ywamy instrukcji \indent.
+\end{lstlisting}
+\end{singlespacing}
+
+\subsubsection{pdf po kompilacji}
+W TeXu wielokrotna spacja jest traktowana jako pojedyncza,
+     s³owo1                s³owo2                  s³owo3
+
+Je¿eli zostawimy wolny wiersz miêdzy zdaniami, nast¹pi wciêcie drugiego zdania.
+
+Aby zapobiec wciêciu u¿ywamy polecenia,
+
+\noindent Zdanie bez wciêcia, pomimo zostawienia wolnego wiersza.
+\\
+\indent Gdy chcemy wymusiæ wciêcie zdania u¿ywamy instrukcji \indent.
+
+\subsection{U¿ywanie w tekœcie znaków specjalnych,}
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\& \% \$ \# \{ \} \_ $\backslash$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+\& \% \$ \# \{ \} \_ $\backslash$
+
+\subsection{Komentarze w TeXu,}
+Komentarze wstawiamy po symbolu \%, lub \%\%. Podczas kompilowania wszytko co jest po procentach jest ignorowane.
+
+\subsection{Formu³y matematyczne}
+Formu³y matematyczne przedstawiamy w dolarach, np:
+\begin{singlespacing}
+\begin{lstlisting}
+$x^2$
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{w efekcie daje}
+$x^2$
+\\
+Podwójne dolary powoduj¹ wyœrodkowanie formu³y.
+$$x^2$$
+
+\subsection{Wypunktowanie i numeracja}
+
+Przy uzyciu pakietu $\backslash$usepackage\{enumerate\}, mo¿emy tworzyæ numerowane w okreœlony sposób podpunkty.
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{enumerate}
+\item punkt 1
+\item punkt 2
+\end{enumerate}
+\end{lstlisting}
+\end{singlespacing}
+
+\subsubsection{pdf po kompilacji}
+\begin{enumerate}
+\item punkt 1
+\item punkt 2
+\end{enumerate}
+
+Gdy chcemy uzyskaæ inny typ numeracji, podajemy ten typ w nawiasie kwadratowym po
+deklaracji $\backslash$begin\{enumerate\}[typ]
+\\
+przyk³adowe typy: [i)] [i.] [I)] [I.] [a)] [a.] [A)]
+\\
+zademonstrujmy numeracje dla typu [a.],
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{enumerate}[a.]
+\item punkt 1
+\item punkt 2
+\end{enumerate}
+\end{lstlisting}
+\end{singlespacing}
+
+\subsubsection{pdf po kompilacji}
+\begin{enumerate}[a.]
+\item punkt 1
+\item punkt 2
+\end{enumerate}
+
+analogicznie pozosta³e numeracje,
+\\
+\\
+PrzejdŸmy do instrukcji pozwalaj¹cej na wypunktowanie elementów bez numeracji, do tego celu stosujemy polecenia itemize, które te¿ znajduje siê w pakiecie enumerate,
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{itemize}
+\item punkt 1
+\item punkt 2
+\end{itemize}
+\end{lstlisting}
+\end{singlespacing}
+
+\subsubsection{pdf po kompilacji}
+\begin{itemize}
+\item punkt 1
+\item punkt 2
+\end{itemize}
+
+Natomiast, gdy chcemy opisywaæ poszczególne punkty w dowolny sposób u¿ywamy œrodowiska itemize zagnie¿d¿onego w œrodowisku description pakietu enumerate,
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{description}
+\item[XXX] punkt 1
+\item[YYY] punkt 2
+\end{description}
+\end{lstlisting}
+\end{singlespacing}
+
+\subsubsection{pdf po kompilacji}
+\begin{description}
+\item[XXX] punkt 1
+\item[YYY] punkt 2
+\end{description}
+
+\subsection{Wstawianie spisu treœci}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\tableofcontents
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+\tableofcontents
+
+\subsection{Tworzenie Bibliografii}
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+
+\begin{thebibliography}{4}
+
+\bibitem{brown} Brown, M., Grundy, W., et al.: Knowledge-based analysis of microarray gene expression data by using support vector machines, University of California (1999)
+
+\bibitem{Eisen} Eisen, MB, Brown, PO: DNA arrays for analysis of gene expression. Methods Enzymol 303, 179-205 (1999)
+
+\bibitem{furey} Furey, T.S., Cristianini, Duffy, N., Bernarski, Schummer, M., Haussler, D.: "Support Vector Machine Classification and Validation of Cancer Tissue Samples Using Microarray Expression Data," Bioinformatics, vol. 16, 2000, pp. 906-914.
+
+\bibitem{zadeh} Zadeh, L.A.: Fuzzy sets and information granularity. In: Gupta, M., Ragade, R., Yager, R.R.(Eds.): Advances in Fuzzy Set Theory and Applications. North Holland, Amsterdam, pp. 3--18 (1979)
+
+\end{thebibliography}
+
+\end{lstlisting}
+\end{singlespacing}
+
+
+Gdy chcemy zacytowaæ dan¹ pozycjê z literatury uzywamy polecenia $\backslash$cite\{nazwa etykiety\}.
+
+
+
+
+\subsubsection{Kod TeXa po kompilacji}
+\label{bibliografia}
+\begin{thebibliography}{4}
+
+\bibitem{brown} Brown, M., Grundy, W., et al.: Knowledge-based analysis of microarray gene expression data by using support vector machines, University of California (1999)
+
+\bibitem{Eisen} Eisen, MB, Brown, PO: DNA arrays for analysis of gene expression. Methods Enzymol 303, 179-205 (1999)
+
+\bibitem{furey} Furey, T.S., Cristianini, Duffy, N., Bernarski, Schummer, M., Haussler, D.: "Support Vector Machine Classification and Validation of Cancer Tissue Samples Using Microarray Expression Data," Bioinformatics, vol. 16, 2000, pp. 906-914.
+
+\bibitem{zadeh} Zadeh, L.A.: Fuzzy sets and information granularity. In: Gupta, M., Ragade, R., Yager, R.R.(Eds.): Advances in Fuzzy Set Theory and Applications. North Holland, Amsterdam, pp. 3--18 (1979)
+
+\end{thebibliography}
+
+\subsection{Odwo³ania}
+
+Odwo³ania pozwalaj¹ na automatyczne odwo³anie do obietku w latexu np. do tabeli, obrazka, sekcji, strony itp. Aby dodaæ odwo³anie wczeœniej nale¿y utworzyæ etykietê z wykorzystaniem polecenia $\backslash$label\{nazwa etykiety\}.
+
+Odwo³ania tworzymy z wykorzystaniem polecenia $\backslash$ref\{nazwa etykiety\}.
+
+Aby dodaæ odwo³anie do sekcji nale¿y zaraz pod dan¹ sekcj¹(poleceniem 'section') dodaæ etykietê $\backslash$label\{nazwa etykiety\}, nastêpnie w tekœcie mo¿na odwo³ywaæ siê do tej etykiety.
+
+\section{Zadania}
+
+\subsection{Dokonaj podzia³u dokumentu na sekcje w klasie article}
+
+Umieœc w dokumencie 5 sekcji nazwanych `Sekcja nr` a w ka¿dej sekcji dodaj po 2 podsekcje. Dodaj tekst korzystaj¹c z narzêdzia do generowania tekstu Lorem Ipsum - (wyszukaj w google fraze 'lorem ipsum')
+
+
+\subsection{Dodaj podzia³ na czêœci i rozdzia³y}
+
+Do uprzednio stworzonego dokumentu dodaj dwie czêœci (part) i dwa rozdzia³y (chapter), zmieñ klasê dokumentu na book. Porównaj ró¿nice z poprzednim dokumentem.
+
+\subsection{Wygeneruj tekst wykorzystuj¹c pakiet lipsum}
+OdnajdŸ w internecie w jaki sposób mo¿na u¿yæ pakietu lipsum w latex'u do generowania tekstu. Dodaj do dokumentu kilka paragrafów tekstu, tak aby ka¿da sekcja zajmowa³a min. stronê.
+
+%\usepackage{lipsum}
+%\lipsum
+
+\subsection{Listy numerowane}
+
+W pierwszej sekcji umieœæ poni¿sz¹ listê wypunktowan¹ zawieraj¹c¹ listê zagnie¿d¿on¹, zwóræ uwagê na rodzaj numerowania:
+
+\begin{enumerate}[A.]
+	\item Punkt 1
+	\begin{enumerate}[a)]
+		\item Punkt 1.1
+		\item Punkt 1.2
+	\end{enumerate}
+	\item Punkt 2
+	\item Punkt 3
+	\item Punkt 4
+\end{enumerate}
+
+\subsection{Dodaj wypunktowanie}
+
+Rozszerz poprzedni¹ listê dodaj¹c do punktu 3 wypunktowanie, tak aby lista wygl¹da³a jak poni¿ej:
+\begin{enumerate}[A.]
+	\item Punkt 1
+	\begin{enumerate}[a)]
+		\item Punkt 1.1
+		\item Punkt 1.2
+	\end{enumerate}
+	\item Punkt 2
+	\item Punkt 3
+	\begin{itemize}
+		\item punkt 3.1
+		\item punkt 3.2
+	\end{itemize}
+	\item Punkt 4
+\end{enumerate}
+
+
+\subsection{Dodaj tytu³ oraz informacje o autorze}
+Na pocz¹tku dokumentu dodaj tytu³, informacje o autorze oraz bie¿ac¹ datê dokumentu. Wygeneruj tytu³ na pierwszej stronie.
+
+\subsection{Dodaj spis treœci}
+Po stronie tytu³owej dodaj spis treœci.
+
+\subsection{Dodaj odnoœniki do sekcji}
+
+Dodaj etykietê do ostatniej sekcji w dokumencie i odwo³aj siê do niej w sekcji pierwszej.
+Wykorzystuj¹c odpowiedni pakiet spraw aby tytu³y w spisie treœcie i wszelkie odwo³ania by³y linkami do odpowiednich rozdzia³ów i sekcji.
+
+\subsection{Dodaj bibliografiê}
+Na koñcu dokumentu dodaj bibliografiê z punktu \ref{bibliografia}. Nastêpnie w pierwszej sekcji dopisz zdanie:
+
+\begin{quote}
+Praca Browna\cite{brown} oraz Furey'a \cite{furey} przedstawiaj¹ narzêdzia sztucznej inteligencji do problemów klasyfikacji.
+\end{quote}
+
+cytowanie (odpowiednie numery) powinny byæ stworzone z wykorzystaniem polecenia 'cite'.
+
+Ostatecznie, aby przetestowaæ dzia³anie tworzenia spisu literatury przestaw pierwsz¹ pozycjê w spisie literatury ('brown') na koniec listy.
+
+
+
+
+\end{document} 

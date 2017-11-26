@@ -1,0 +1,244 @@
+\documentclass [a4paper,12pt]{article}
+\textwidth=170mm \evensidemargin 0mm \oddsidemargin 0mm
+\topmargin=-1cm \headsep=0cm \headheight=0cm \footskip=1cm
+\textheight 26cm %\pagestyle{empty}
+\usepackage{polski}
+%\usepackage[Polish]{babel}
+\usepackage[cp1250]{inputenc}
+\usepackage{graphicx}
+%\usepackage{sidecap}
+%\usepackage{wrapfig}
+\usepackage{enumerate}
+\begin{document}
+% !TEX encoding = cp1250
+
+
+%\vspace{1cm}
+\section{Programowanie w matlabie - skrypty i funkcje}
+
+\subsection{Skrypty}
+
+Skrypt jest plikiem tekstowym z rozszerzeniem \textbf{*.m} zawieraj¹cym listê poleceñ do wykonania. Aby utworzyæ skrypt w matlabie wybierz 'File $\rightarrow$ New $\rightarrow$ Script', otworzy siê edytor, w którym mo¿esz wpisaæ listê poleceñ.
+
+Uruchomienie skryptu:
+
+\begin{enumerate}
+	\item Wywo³anie w konsoli podaj¹c nazwê skryptu (bez rozszerzenia). Wa¿ne aby folder zawieraj¹cy skrypt dodany by³ do œcie¿ki przeszukiwania matlaba.
+	\item Normalne uruchomienie - klawisz F5,
+	\item Praca krokowa + punkty przerywania (breakpointy) - pozwalaj¹ na krokowe wykonywanie skryptu wraz z podgl¹dem stanu zmiennych, aby postawiæ breakpointa nale¿y ustawiæ kursor w danej lini i nacisn¹æ F12, w tej lini powinna po lewej stronie pojawiæ siê czerwona kropka.
+	\item Uruchamianie poszczególnych komórek - komórki oddzielaj¹ pewn¹ logiczn¹ czêœæ naszego skryptu, tworzy siê je wykorzystuj¹c podwójny znak procentu, aby uruchomiæ dan¹ komórkê nale¿y w jej ciele umieœciæ kursor i nacisn¹æ Ctr+Enter.
+\end{enumerate}
+
+\subsection{Æwiczenie}
+Stwórz nowy skrypt i wprowadŸ do niego poni¿sze polecenia. Przetestuj sposoby uruchomienia skryptu: 
+
+\begin{verbatim}
+%% W pierwszym wierszu podajemy opis skryptu
+
+%% Obliczenia 
+x=-2*pi:0.01:2*pi;
+y1=x.*sin(x);
+y2=x.*cos(x);
+%% Rysujowanie wykresu
+figure(1)
+hold on
+plot(x,y1,'r');
+plot(x,y2,'g');
+% dodanie legendy
+legend('xsin(x)','xcos(x)');
+hold off
+\end{verbatim}
+
+\subsection{Funkcje}
+
+Funkcjê tworzymy i uruchamiamy podobnie jak skrypty. Najwa¿niejsze ró¿nice pomiêdzy skryptem i funkcj¹:
+\begin{enumerate}
+	\item w funkcji zmienne nie s¹ widoczne w globalnej przestrzeni roboczej (workspace)
+	\item funkcje posiadaj¹ parametry wywo³ania i zwracaj¹ wynik (wyniki)
+	\item nazwa funkcji i nazwa pliku musz¹ byæ takie same
+	\item wywo³uj¹c funkcjê musimy podaæ wartoœci parametrów
+\end{enumerate}
+
+Przyk³ad
+\begin{verbatim}
+function [y]=kwadrat(x,a,b,c)
+%% [y]=kwadrat(a,b,c)
+%% funkcja oblicza wartoœæ funckji kwadratowej ax^2+bx+c
+
+y = a*x^2+b*x+c;
+
+end
+\end{verbatim}
+
+
+\subsection{Instrukcje warunkowe i pêtle}
+
+Pêtla for
+\begin{verbatim}
+a=rand(10,1);
+sum=0;
+
+for i=1:length(a)
+   sum=sum+a(i); 
+   fprintf('Suma %g\n',sum);
+end
+fprintf('-----------');
+fprintf('Suma ostateczna %g\n',sum);
+\end{verbatim}
+
+Warunek if
+\begin{verbatim}
+
+if(warunek1)
+   % gdy warunek1 prawdziwy 
+elseif(warunek2)
+   % gdy warunek2 prawdziwy 
+else
+    % w przeciwnym wypadku
+end
+\end{verbatim}
+
+Operatory logiczne
+
+\begin{tabular}{ll}
+$|\ |$ & operator 'or' (lub) \\
+\&\& & operator 'and' (i) \\
+ $ \sim$  & negacja \\
+$ ==$ & operator równoœci \\
+$\sim =$ & operator nierównoœci
+\end{tabular}
+
+\subsection{Parametry opcjonalne funkcji}
+Parametry opcjonalne funkcji, mo¿na za symulowaæ wykorzystuj¹c wbudowan¹ zmienn¹ 'narig'- zwracaj¹c¹ iloœæ paramterów przekazanych do funckji
+
+\begin{verbatim}
+function [y]=kwadrat(x,a,b,c)
+%% [y]=kwadrat(a,b,c)
+%% funkcja oblicza wartoœæ funckji kwadratowej ax^2+bx+c
+
+if(nargin<2)
+    %nie podano a,b,c
+    a=1;
+    b=0;
+    c=0;
+elseif(nargin<3)
+    %nie podano b,c
+    b=0;
+    c=0;
+elseif(nargin<4)
+    %nie podano c
+    c=0;
+end
+
+y = a*x^2+b*x+c;
+
+end
+\end{verbatim}
+
+\subsection{Æwiczenie}
+Utwórz funkcjê kwadrat jak wy¿ej, przetestuj jej wywo³anie z ró¿n¹ iloœci¹ parametrów:
+\begin{verbatim}
+kwadrat(4);
+kwadrat(4,1);
+kwadrat(4,1,2);
+kwadrat(4,1,2,1);
+\end{verbatim}
+SprawdŸ czy wyniki zgadzaj¹ siê z zak³adanymi.
+
+
+\subsection{Æwiczenie}
+Napisz skrypt generuj¹cy wykres 3D dla podanych funkcji, wybór funkcji do narysowania ma odbywaæ siê na podstawie bie¿¹cego czasu, je¿eli liczba minut jest podzielna przez 2 to wyœwietlamy wykres dla funkcji 1, w przeciwnym wypadku rysujemy wykres 2.
+Ustaww tytu³u wykresu, legendy, podpisów osi, zakresów wartoœci dla osi $x,y \in [-3,3]$ .
+\begin{enumerate}
+	\item $z = (x^2+y^2)/(1+y^2)$
+	\item $z = (x^2+y^2)/\sin(1+y^2)$
+\end{enumerate}
+
+Do pobrania bie¿¹cego czasu u¿yj funkcji clock.
+
+\subsection{Æwiczenie}
+\label{sec:matSin}
+Dla $x \in [-2\pi,2pi]$ utwórz macierz wartoœci sin(x), sin(2x), sin(4x), sin(8x) co $0.01\pi$. Wartoœci sinusów umieœæ w ka¿dym kolejnym wierszu macierzy. Nastêpnie napisz skrypt, który narysuje wszystkie wykresy na jednym obrazie, ka¿dy wykres innym kolorem.
+W celu automatyzacji pracy u¿yj pêtli 'for' do wygenerowania macierzy danych oraz wykresów.
+
+\begin{equation}
+\left[\begin{array}{llll}
+	\sin(-2\pi) & \sin(-1.99\pi) & \dots & \sin(2\pi) \\
+	\sin(2* (-2\pi)) & \sin(2*(-1.99\pi)) & \dots & \sin(2*2\pi) \\
+	\vdots & & & \\
+	\sin(8* (-2\pi)) & \sin(8*(-1.99\pi)) & \dots & \sin(8*2\pi) \\
+\end{array}\right]
+\label{eq:}
+\end{equation}
+
+
+\subsection{Æwiczenie}
+\label{sec:procent}
+Napisz funkcjê obliczaj¹c¹ kapita³ koñcowy przy danym wk³adzie pocz¹tkowym i podanej stopie oprocentowania wk³adu.
+
+$$ V = V_0(1+ \frac{r}{m})^{m*n} $$
+gdzie $V_0$ - wk³ad pocz¹tkowy, $r$ - nominalna stopa procentowa (podana jako u³amek), n - liczba lat, m- liczba kapitalizacji odsetek w roku.
+
+Parametr m powinien byæ parametrem opcjonalnym, domyœlnie równym 1.
+
+\subsection{Æwiczenie}
+Wykorzystuj¹c funkcjê z æwiczenia \ref{sec:procent} napisz skrypt, który narysuje wykres przyrostu kapita³u w latach, poeksperymentuj z parametrami. Wybierz wartoœci parametrów, które oferuje twój bank i zobacz ile potrzebujesz lat, aby staæ siê milionerem przy wk³adzie pocz¹tkowym 1000z³.
+
+
+
+\section{Wczytywanie i zapisywanie danych}
+W celu zapisu i odczytywania danych matlab oferuje pliki '*.mat'. S¹ to binarne pliki po zawalaj¹ce zapisywaæ do nich stan poszczególnych zmiennych.
+
+\begin{verbatim}
+save('nazwa_pliku.mat','nazwa_zmiennej');
+load('naza_pliku.mat');
+\end{verbatim}
+
+\subsection{Æwiczenie}
+Utwórz skrypt tworz¹cy macierz odpowiadaj¹c¹ tabliczce mno¿enia od 1 do 20 i zapisz j¹ do pliku tabliczka.mat.
+Nastêpnie wyczyœæ wszystkie zmienne w workspace i za³aduj plik .mat (klikaj¹c na niego dwukrotnie w oknie Current Folder)
+SprawdŸ stan workspace'a.
+
+
+\subsection{Æwiczenie}
+Zmodyfikuj æwiczenie \ref{sec:matSin} w taki sposób aby tablica sinusów z danymi by³a wczytywana z pliku *.mat a je¿eli taki plik nie istniej to niech skrypt wygeneruje odpowiednie dane.
+
+
+\section{Funkcje anonimowe}
+
+Pozwalaj¹ na utworzenie funkcji bez tworzenia odpowiadaj¹cego im m-pliku. Szczególnie przydatne gdy funkcja jest ma³a.
+
+Sk³adnia
+\begin{verbatim}
+funcHandle = @(argumenty) funcBody;
+\end{verbatim}
+funcHandle - zmienna przechowywuj¹ca uchwyt do funkcji \\
+Przyk³ad
+\begin{verbatim}
+poleKola = @(r) pi*r*r;
+poleKola(3);
+poleKola(0:1:5);
+\end{verbatim}
+
+operator @ pobiera uchwyt funkcji, mo¿na go tak¿e zastosowaæ do funkcji ju¿ zdefiniowanych w matlabie np.
+\begin{verbatim}
+sinHandle = @sin;
+\end{verbatim}
+
+Funkcje anonimowe i uchwyty do funkcji mo¿na przekazaæ jako parametr do innej funkcji.
+
+\subsection{Æwiczenie}
+Napisz funkcjê 'drawPlot(x,fncHandle)', która jako parametry wejœciowe dostaje wektor x oraz uchwyt do innej funkcji. Zadaniem funkcji drawPlot jest narysowanie wykresu funkcji przekazanej jako parametr. Przetestuj dzia³nie funkcji drawPlot dla argumentu fncHandle równym:
+
+\begin{enumerate}
+	\item funkcji anonimowej $x^2$
+	\item funkcji sin
+	\item funkcji cos
+	\item funkcji log2
+\end{enumerate}
+
+
+\end{document}
+
+
+

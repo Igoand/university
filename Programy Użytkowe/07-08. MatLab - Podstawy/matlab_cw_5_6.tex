@@ -1,0 +1,350 @@
+\documentclass [a4paper,12pt]{report}
+\textwidth=170mm \evensidemargin 0mm \oddsidemargin 0mm
+\topmargin=-1cm \headsep=0cm \headheight=0cm \footskip=1cm
+\textheight 26cm %\pagestyle{empty}
+\usepackage{polski}
+%\usepackage[Polish]{babel}
+\usepackage[cp1250]{inputenc}
+\usepackage{graphicx}
+%\usepackage{sidecap}
+%\usepackage{wrapfig}
+\usepackage{enumerate}
+\begin{document}
+% !TEX encoding = cp1250
+
+\section{Niektóre przydatne polecenia}  
+
+\subsection{ogólne}
+\begin{tabular}{p{2.5cm}p{12cm}}
+\hline
+Diary('Plik')&Zapis sesji Matlaba\\
+help&Wyœwietla liste dostepnych tematów pomocy\\
+helpwin&Otwiera interaktywne okno pomocy\\
+helpdesk&Otwiera plik pomocy w oknie przegl¹darki internetowej\\
+help temat&Wyœwietla pomoc na temat\\
+lookfor tekst&Wyœwietla liste dostepnych tematów pomocy zawieraj¹cych tekst\\
+demo&Uruchamia demonstracyjn¹ wersjê programu\\
+computer&Informacje o typie komputera\\
+clock&Wyœwietla godzinê i datê jako wektor\\
+date&Wyœwietla datê w postaci ³¹ñcucha\\
+more on&Steruje stronicowaniem wyœwietlania danych\\
+ver&Wersja i licencja MATLAB\\
+bench&Testuje wydajnoœæ komputera w MATLABie\\
+\hline
+\end{tabular}
+
+
+%\vspace{1cm}
+\subsection{Infromacje o przestrzeni roboczej}
+
+\begin{tabular}{p{2.5cm}p{12cm}}
+\hline
+who&Lista aktualnych zmiennych w przestrzeni roboczej\\
+whos&Lista aktualnych zmiennych w przestrzeni roboczej wraz z rozmiarem\\
+what&Listuje M- Mat- oraz Mex- pliki zapisane na dysku\\
+clear&Czyœci przestrzeñ robocz¹, usuwaj¹c wszystkie zmienne\\
+clear x y z&Usuwa zmienne x,y,z\\
+clear all&Usuwa wszystkie zmienne i funkcje z przestrzeni roboczej\\
+mlock fun&Blokuje funkcjê fun uniemo¿liwaiaj¹c usuniêcie przez  clear\\
+munlock fun&odblokowuje funkcjê fun umo¿liwaiaj¹c usuniêcie przez  clear\\
+clc, home&Czyœci okno poleceñ, historia jest tracona\\
+clf&Czyœci okno graficzne\\
+\hline
+\end{tabular}
+
+
+
+%\vspace{1cm}
+
+\subsection{Informacje o katalogu}
+
+\begin{tabular}{p{2.5cm}p{12cm}}
+\hline
+pwd&Wyœwietla bie¿¹cy katalog roboczy\\
+cd&Zmienia bie¿acy katalog roboczy\\
+dir , ls&Wyœwieta zawartoœæ bie¿¹cego katalogu roboczego\\
+path&odczytuje lub definiuje œcie¿kê wyszukiwania w MATLABie\\
+editpath&Modyfikuje  œcie¿kê wyszukiwania w MATLABie\\
+copyfile&Kopiuje plik\\
+mkdir &Tworzy katalog\\
+\hline
+\end{tabular}
+%\vspace{1cm}
+%\vspace{1cm}
+\subsection{Zamykanie}
+
+\begin{tabular}{p{2.5cm}p{12cm}}
+\hline
+
+control+C&Zatrzymuje wykonywanie bie¿¹cego polecenia\\
+quit, exit&Wyjœcie z MATLABa\\
+\hline
+\end{tabular}
+
+\subsection{Æwiczenie}
+\begin{itemize}
+ \item Uruchom MATLAB. 
+\item SprawdŸ katalog który jest przypisany do MATLABa. 
+\item Utwórz w³asny katalog  i zmieñ katalog bie¿¹cy na swój katalog.
+\item  SprawdŸ poleceniem computer i bench walory swego komputera.
+\item  SprawdŸ wersjê MATLABa.
+\item Otwórz plik do zapisu sesji (instrukcja {\bf Diary})
+
+\item   Wyœwietl liczbê $100\cdot\pi$ (100*pi) w ró¿nych formatach.
+\end{itemize}
+%\newpage
+\section{Kalkulator}
+Format wyœwietlania liczb mo¿na zmieniaæ przy pomocy polecenia {\bf  format} z opcjami  short, short e, long, long e, short g, long g, hex, rat, bank
+Operatory arytmetyczne: + - * / \^ 
+Niektóre funkcje sin(), cos(), tan(), asin(), acos(), atan(), exp(), log(), log10(), sqrt(), pi
+%vspace{1cm}
+
+\subsection{Æwiczenie}
+
+
+ Oblicz nastêpuj¹ce wartoœci:\\ 
+ (pierwiastki mo¿na zapisywaæ jako potêgi)\\ \large
+\begin{itemize}
+ \item $\frac{1+2^4}{\frac{1}{2+\sqrt{3}}-3}$
+\item $\left( 1+\frac{1}{2345}\right)^{2345}$
+\item  $e$
+\item  $\left( 1+\frac{10}{23456}\right)^{23456}$
+\item $e^{10}$
+\item $\frac{\sqrt[2]{2}-\sqrt[4]{2}}{\sqrt[5]{2}-\sqrt[6]{2}}$
+\item $2^{(\sqrt[3]{3})^\pi}$ 
+\end{itemize}
+\normalsize
+\subsection{Æwiczenie}
+Wyznacz przybli¿enia $\pi$ oraz $e$ w postaci u³amków zwyk³ych. Zapisz w postaci u³amków zwyk³ych wyra¿enia:\\
+\large
+\begin{itemize}
+\item $\frac{\frac{23}{25}-\frac{23}{29}}{1.4-\frac{3}{17-\frac{27}{28}}}$
+
+\item $\frac{0.5-\frac{7.1-\frac{12}{17}}{17-\frac{27}{2+\frac{3}{7}}}}{\frac{3+\frac{4}{19}}{25}-\frac{26}{29+\frac{23}{33}}}$ 
+\item $\sqrt[6]{\ln\ (5+\sin^2 8)}+\mbox{arctg}\, 5 \pi$
+\end{itemize}
+%\vspace{1cm}
+\normalsize
+
+
+\subsection{Æwiczenie}
+\begin{itemize}
+
+\item Dla ko³a o promieniu r=6,32 obliczyæ pole i obwód. 
+\item Obliczyæ pole powierzchni i objêtoœæ kuli o tym promieniu.
+\item Obliczyæ pole i objêtoœæ torusa o promieniach r=7,33 i R=22,54. Odpowiednie wzory z internetu.
+\end{itemize}
+
+\section{Funkcje}
+Niektóre funkcje\\
+ sin(), sind(), cos(),cosd(), tan(), tand(), asin(), acos(), atan(), exp(), log(), log10(), sqrt(), pi\\
+Argumenty funkcji umieszcza siê w nawiasach.
+\subsection{Æwiczenie}
+
+Oblicz:\\
+\begin{itemize}
+\item $\sin \frac{\pi}{2}$
+\item $\cos 60^o$
+\item $\sin 78^o$
+\item$ \tg \frac{\pi}{9}$
+\item$\ln 2,718$
+\item $ \log 10$
+\item $\tg 89^o$
+\item $\arcsin0,5$
+\item$\mbox{arctg} 100000$ (w stopniach i radianach)
+\item$  e^e$
+\item $\ln (-4)$
+\item$ \sqrt{-16}$
+\item$ \arcsin (2)$
+\item $\arccos (-10)$
+\item $e^{2\pi i}$
+\item $\sin(3+4i)$
+\item$\sinh( 4)$
+\end{itemize}
+\section{Zmienne}
+W matlabie zmienne podstawiamy instrukcj¹ :\\
+zmienna=wyra¿enie (wyra¿enie mo¿e zawieraæ zmienne, w tym zmienna definiowan¹).
+
+\subsection{Æwiczenie}
+ Podstaw za x wartoœæ $\frac{\pi}{6}$ i oblicz:$ \sin x, \cos x, \tg x, \ctg x, \arcsin x, e^x$
+SprawdŸ wzory na jedynkê trygonometryczn¹ dla k¹ta $\alpha=5$ oraz  czy $\tg x=\frac{\sin x}{\cos x}$ , sprawdŸ wzór na jedynkê dla funkcji hiperbolicznych dla jakiejœ wartoœci (wzór na jedynkê trygonometryczn¹ dla funkcji hiperbolicznych znajdŸ w pamiêci lub Internecie)
+\subsection{Æwiczenie}
+Dla wartoœci a,b,c wypisz wzory na rozwi¹zania równania $ax^2+bx+c=0$ , nastêpnie podstawiajac za a,b,c ró¿ne wartoœci znajdŸ rozwi¹zania równania (nale¿y wprowadzic zmienn¹ delta). Rozwi¹¿ nastêpuj¹ce równania:
+
+$$3x^2-2x-1=0, \quad -5x^2-6x+5=0,\quad x^2-4x+5=0, \quad 5x^2-x-3=0$$ $$121x^2+211x-41=0, \quad 7x^2+8x+73=0$$
+
+\section{Tworzenie tablic liczb}
+Tablice tworzy siê podstawiaj¹c za zmienn¹ wartoœci oddzielone spacjami umieszczone w nawiasach kwadratowych  np. x=[1 2 3]. Je¿eli tablica ma byæ macierz¹ to  wiersze zostaj¹ zakoñczone œrednikiem np. y=[1 2; 3 4]. Mo¿na równie¿ tworzyæ automatycznie poleceniem {\bf p:k:o} gdzie p-pierwsza wartoœæ k-krok, o-ograniczenie od góry.   Innym sposobem automatycznego tworzenia tablicy jest polecenie {\bf linspace(p,k,i)} gdzie p-pocz¹tek k-koniec,i-iloœæ wartoœci.  Na tablicach mo¿na wyliczaæ wartoœci funkcji np .{\bf t=linspace(0,pi,10) ;} (instrukcja zakoñczona œrednikiem nie jest wyœwietlana)  i nastêpnie {\bf sin(t)}. \\
+\subsection{Æwiczenie}
+Utwórz tablicê liczb od 1 do 100. Utwórz tablicê liczb dodatnich, podzielnych przez 11 do 1000. Utwórz tablice liczb od 1 do 2 sk³adaj¹c¹ sie z 70 liczb dzielacych ten odcinek na równe czêœci. \\
+Transpozycje tablicy uzyskujemy operatorem {\bf  `} np.  {\bf  A‘} \\
+
+
+Operacje na elementach tablic wykonuje siê dodaj¹c kropkê przed znakiem dzia³ania \verb=  .+ ./  .* .^ =
+przyk³adowo \verb=A.^2= podnosi wszystkie elementy macierzy do potêgi drugiej.
+
+
+\subsection{Æwiczenie}
+\begin{itemize}
+ \item Utwórz tablice a=[1 2 3] i b=[4 5 6]. ZnajdŸ sumê, ró¿nicê iloczyn, iloraz,transpozycjê  oraz pierwiastki elementów obu tablic. Spróbuj a+b’,  a*b,  a*b’, a’*b , a’*b’
+\item Utwórz tablicê sinusów,cosinusów i tangensów k¹tów od 0 do 90 stopni co jeden stopieñ.
+\item Utwórz po 100 wyrazów ci¹gów
+\renewcommand{\labelitemii}{$\ast$}
+\begin{itemize}
+\item $\frac{1}{n}$ 
+\item $\frac{1}{n^2}$
+\item $ \frac{1}{\sqrt{n}}$
+\item$ \sqrt[n]{n}$
+\item $ \left( 1+\frac{1}{n}\right)^n$
+\item $\frac{n^3-2n^2+4}{2n^3+n^2+10n+14}$
+\end{itemize}
+\end{itemize}
+
+Sumê elementów tablicy A mo¿na uzyskac przy pomocy instrukcji {\bf sum(A)}
+
+\subsection{Æwiczenie}
+Oblicz nastêpuj¹ce sumy  (silniê oblicza funkcja {\bf factorial(n) )}: \large
+\begin{itemize}
+\item$\sum\limits_{i=1}^{20}{\frac{1}{i!}}$
+\item $ \sum\limits_{i=1}^{20}{\frac{2^i}{i!}}$
+\item $ \sum\limits_{i=1}^{40}{\frac{(-1)^i}{(2i+1)!}}$
+\item $\sum\limits_{i=1}^{200}{\frac{(-1)^i}{i}}$
+\item $\sum\limits_{i=1}^{1000}{\frac{1}{i^2}}$
+\item $  \sum\limits_{i=1}^{50}{\frac{i^2}{2^i}} $
+\end{itemize}
+\normalsize
+\section{Macierze}
+Wprowadzanie macierzy polega na wpisywaniuw nawiasach kwadratowych elementów (podobnie jak w tablicach). Elementy wiersza oddziela siê spacj¹, zakoñczenie wiersza œrednikiem. Je¿eli przenosimy definicje do nastêpnego wiersza stosuje siê znak kontynuacji $dots$.  Do elementów macierzy mo¿na odwo³aæ siê poprzez indeksy {\bf A(i,j)}. Mo¿na równie¿ podstawiaæ do macierzy u¿ywaj¹c indeksy. Np. {\bf A(2,3)=5} .Wymiary macierzy mo¿na odczytaæ instrukcj¹ {\bf size(A)}. Mo¿na wyznaczyæ fragment macierzy instrukcj¹ {\bf A(p:q,s:t)} U¿yciedwukropka : zamiast zakresu wybiera  wszystkie wiersze lub kolumny. Instrukcja {\bf D(9,9)=1} spowoduje utworzenie macierzy  D o wymiarach 9x9 z elementami 0 i wskazanym elementem.
+
+\subsection{Æwiczenie}
+\begin{itemize}
+\item Utwórz macierz A o wymiarach 7x7 (elementy dowolne) 
+\item ZnajdŸ element z 3 wiersza 4 kolumny. 
+\item Podstaw za element z 6 wiersza 3 kolumny liczbê $\pi$. 
+\item Utwórz macierze B sk³adaj¹c¹ siê z 3 pierwszych wierszy i kolumn od 2 do 6 i C – z trzech pierwszych kolumn, D – z czterech ostatnich wierszy
+\end{itemize}
+
+Jako indeksy mo¿na u¿ywaæ wektory, wskazuj¹c w ten sposób na konkretne wiersze lub kolumny macierzy. Mo¿na równie¿ wybraæ  wiersze lub kolumny macierzy poprzez  wskazanie ich przy pomocy 0 i 1. Tworzy siê wektor  v z zer i jedynek instrukcj¹ {\bf logical(v)} zmienia siê na wartoœci logiczne. Nastêpnie umieszczaj¹c w miejsce indeksów w macierzy np.  {\bf A(v,:)} wybieramy wiersze którym odpowiadaj¹ 1. Przyk³adowo {\bf A([2 4],[3 5])} wybiera z macierzy drugi i czwarty wiersz i trzeci¹ i pi¹t¹ kolumnê. Gdy utworzymy wektor logiczny {\bf l=logical([1 0 1 0 1])} to {\bf A(l,:)} wybierze pierwszy, trzeci i pi¹ty wiersz macierzy.
+
+\subsection{Æwiczenie}
+\begin{itemize}
+\item Utwórz macierz D sk³adaj¹c¹ siê z 1,3 5, wiersza  i 2 i 4 kolumny macierzy A.
+\item  Utwórz macierz E sk³adaj¹ca siê z 1,2,1, 4,1, 5 wiersza i wszystkich kolumn macierzy A.
+\item  Utwórz macierz F z macierzy A stosuj¹c instrukcjê {\bf logical()} i wybieraj¹c 1,3,6 wiersz i 2,4,5,kolumnê.
+\end{itemize}
+\subsection{Przekszta³canie macierzy}
+Macierz mo¿na przekszta³ciæ na wektor instrukcj¹ {\bf b=A(:)}  lub macierz o innych wymiarach instrukcja {\bf reshape(A,p,q)}. Mo¿na do³¹czyæ wiersz instrukcj¹ {\bf [A;v]} lub kolumnê {\bf [A u]}. Aby usun¹æ fragment macierzy nale¿y za ten fragment podstawiæ macierz pust¹ {\bf []}.
+\subsection{Æwiczenie}
+\begin{itemize}
+\item Przekszta³æ macierz A w wektor V
+\item Wyodrêbnij z macierzy A pierwszych 6 wierszy i kolumn jako macierz G
+\item Przekszta³æ powsta³¹ macierz G na macierze 4x9,9x4, 2x18, 18x2. 
+\item ZnajdŸ macierz transponowan¹ do macierzy 4x9. Czy jest taka sama jak macierz  9x4? 
+\item Utwórz macierz H z macierzy A usuwaj¹c 2 i 4 wiersz oraz trzeci¹ kolumnê.
+\item Utwórz macierz Z 2x3 z elementami zespolonymi. ZnajdŸ macierz transponowana do niej. 
+\end{itemize}
+{\bf Macierze specjalne}
+\begin{itemize}
+\item {\bf Eye(m,n)} macierz jednostkowa je¿eli $ m\neq n$ na pierwszej przek¹tnej s¹ jedynki pozosta³e zera. 
+\item {\bf zeros(m,n)} -- jak nazwa wskazuje
+\item {\bf ones(m,n)} --  jw.
+\item {\bf rand(m,n)} -- macierz losowa
+\item {\bf randn(m,n)} -- macierz losowa o rozk³adzie normalnym
+\item {\bf diag(v)} -- macierz diagonalna z przek¹tn¹ v
+\item {\bf diag(A)}  -- wyodrêbnia przek¹tn¹ z macierzy
+\item {\bf diag(A,k)} --sprawdziæ
+\end{itemize}
+\subsection{Æwiczenie}
+\begin{itemize}
+\item Utworzyæ macierz $P\  10\times 10$ która ma na g³ównej przek¹tnej  1 a na kolejnych przek¹tnych wartoœci zwiêkszaj¹ce  siê o 1. \\
+1 2 3 4 5 6 7 8 9 10\\
+2 1 2 3 4 $\dots$.\\
+PodpowiedŸ: \\
+
+diag(1*ones(10,1),0)+diag(2*ones(9,1),1)
+
+\item Utworzyæ macierze losowe kwadratowe M i N  o tych samych wymiarach i obliczyæ M*N oraz M.*N, sk¹d wynika ró¿nica?
+
+\item Utworzyæ  macierz losow¹ $C\  10\times 10$ i wektor losowy $d\  10\times 1$ oraz sprawdziæ rozwi¹zalnoœæ uk³adu równañ $Cx=d$. 
+\item Rozwi¹zaæ uk³ad równañ korzystaj¹c z macierzy odwrotnej {\bf (inv() ) }i poprzez dzielenie macierzy $C\backslash d$. \\
+\end{itemize}
+Macierze mo¿na porównywaæ przy pomocy operatorów\verb+ <, >, <=, >=, ==+
+
+
+\subsection{Æwiczenie}
+Zbadaj które z rozwi¹zañ poprzednigo przyk³adu s¹ dodatnie  i podstaw je do wektora {\bf dodatnie}.
+\newpage
+\section {£añcuchy znakowe}
+£añcuchy znakowe wprowadza siê przy pomocy pojedynczych cudzys³owów np.  k=’kot Ali’
+Traktowany jest jako wektor wierszowy. Wpisanie w nawiasie kwadratowym dwóch ³añcuchów oddzielonych spacj¹ lub -przecinkiem  powoduje ich z³¹czenie natomiast rozdzielonych œrednikem tworzy wektor, przy czym d³ugoœci ³añcuchów musz¹ byæ jednakowe.
+
+\subsection{Niektóre funkcje tekstowe}
+
+\begin{tabular}{p{2.5cm}p{12cm}}
+\hline
+abs()&zwraca kod ASCII znaków tekstu\\
+char()&tworzy z ³añcuchów wektor kolumnowy (a w zasadzie macierz)  uzupe³niaj¹c ³añcuchy spacjami. Gdy argumentem jest tablica kodów ASCII tworzy tekst\\
+blanks(n)&tworzy napis sk³adaj¹cy siê z n spacji\\
+deblank()&usuwa spacje z pocz¹tku i koñca ³añcucha tekstowego\\
+findstr(s1,s2)&wskazuje miejsce pojawienia siê tekstu krótszego (s1 lub s2) w tekœcie d³u¿szym\\
+int2str()&zamienia liczbê na tekst, je¿eli liczba nie jest ca³kowita to zostaje zaokr¹glona\\
+ischar()&bada czy argument jest tekstem \\
+isletter()&bada czy argument jest tekstem czy liter¹\\
+lower(),upper()&zmienia wielkoœæ liter\\
+mat2str()&zamienia macierz liczbow¹  na tekst\\
+num2str()&zamienia liczbê na tekst\\
+strcmp()&porównuje teksty \\
+strncmp()&porównuje pierwszych n znaków \\
+strcat(a,b)&³¹czy teksty wierszami, przy czym a i b mog¹ byc wektorami tekstowymi o tej samej liczbie wierszy \\
+strvcat()&dzia³a podobnie jak char()\\
+disp('hello')& wyœwietla ³añcuch znaków \\
+fprintf('')& pozwala wyœwietliæ ³añcuch znaków wraz z przekazanymi parametrami, np. \newline
+fprintf('parametr k=\%d a parametr z=\%g',123, 1.234) 
+\newline za \%d - zostanie podstawiona liczba ca³kowita 5, zaŸ za \%g zostanie podstawiona liczba zmienno+przecinkowa 1.234 \\
+\hline
+\end{tabular}
+\subsection{Æwiczenie}
+Utwórz dwa wektory kolumnowe pierwszy z piêcioma imionami i drugi z piêcioma nazwiskami. Zamieñ pierwsze litery imienia i nazwiska na du¿e litery (bez wzglêdu na to czy s¹ du¿e czy nie). Po³¹cz te wektory w jeden wektor. Uporz¹dkuj alfabetycznie. Do³¹cz przed ka¿dym nazwiskiem numer kolejny. 
+\subsection{Instrukcja interaktywna input('zachêta')}
+Instrukcja input pozwala na interaktywne wprowadzanie danych. W przypadku wprowadzania danych tekstowych instrukcja ma postaæ {\bf x= input('zachêta','s')}. Instrukcj¹ wyprowadzaj¹ca wynik jest instrukcja {\bf disp(x)}. Instrukcje mo¿na umieszczaæ w jednej linii oddzielaj¹c je œrednikami.
+
+{\bf Przyk³ad} (rozwi¹zanie równania z jedn¹ niewiadom¹)
+Wpisz poni¿szy przyk³ad w w jednej linii 
+\begin{verbatim}
+ a=input('równanie ax+b=c Podaj a=');b=input('b=');c=input('c=');
+disp(['x=' num2str((c-b)/a)]);
+\end{verbatim}
+\subsection{Æwiczenie}
+Opieraj¹c siê na powy¿szym przyk³adzie utwórz programik rozwi¹zuj¹cy równanie kwadratowe.
+Utwórz programik rozwi¹zuj¹cy uk³ad trzech równañ z trzema niewiadomymi (wczytywana jest macierz uk³adu i wektor wyrazów wolnych).  
+
+\section{wykresy}
+Funkcje przydatne przy tworzeniu wykresów:\\
+\begin{tabular}{p{6cm}p{8cm}}
+\hline
+plot(x,y) & instrukcja tworz¹ca wykres\\
+axis equal & ujednolicenie skali obu osi\\
+xlabel() & etykieta osi x\\
+ylabel() &etykieta osi y\\
+title()  &tytu³ wykresu\\
+text()&napis na wykresie w okreœlonym miejscu\\
+axis([xmin xmax ymin ymax])&zakresy osi\\
+\hline
+
+\end{tabular}\\ \\
+Dok³adny opis dzia³ania instrukcji \emph{help instrukcja}
+\subsection{Æwiczenie}
+Wyznacz w uk³adzie wspó³rzêdnych punkty $ (1,1) ,\  (3,3),\  (0,7),\  (-1,-\pi)$   uwaga: Uzyskanie na wykresie wielu punktów jest mo¿liwe wpisuj¹c w instrukcji plot wspó³rzêdne kolejnych punktów {\bf plot(x1,y1,x2,y2, …)} . Zaznacz punkty krzy¿ykiem {\bf plot(x,y,’x’)} i kó³kiem {\bf plot(x,y,’o’).} Wyznacz ponownie powy¿sze punkty u¿ywaj¹c jednej instrukcji.
+\subsection{Æwiczenie}
+Utwórz wektory z pierwszych i drugich wspó³rzêdnych powy¿szych punktów a nastêpnie utwórz wykres instrukcj¹ plot(). Utwórz kwadrat o boku=4.  Utwórz trójk¹t o wierzcho³kach w punktach (0,0) (1,4), (2,3). Utwórz trójk¹t równoboczny o boku 4.. Utwórz szeœciok¹t o boku 1.
+
+Aby uzyskaæ wykres funkcji nale¿y punkty umieœciæ wystarczaj¹co ‘gêsto’ w czym pomocna jest instrukcja linspace (poprzednie zajêcia). 
+\subsection{Æwiczenie}
+Utwórz wykresy funkcji $\sin x$ dla $x\in <0,2\pi>$, $\cos x$ dla   $x\in <0,2\pi>$, \\ 
+$\arccos x$ dla   $x\in <-1,1>$, $x^2\cdot\ln |x|$ dla   $x\in <-5,5>$. Do ka¿dego wykresu dodaj tytu³ oraz opisy osi, wyrównaj osie.
+\subsection{Æwiczenie}
+Utwórz wykresy ko³a o promieniu 5, asteroidy ($x=\cos ^3 t,\ y=\sin ^3 t, \ t\in <0,2\pi >$)
+\subsection{Æwiczenie}
+Utwórz programik rysuj¹cy wielok¹t foremny o zadanej liczbie boków i i zadanej d³ugoœci boku wczytywanych instrukcj¹ input.
+
+\end{document}

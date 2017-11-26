@@ -1,0 +1,370 @@
+\documentclass[]{beamer}
+\usepackage[MeX]{polski}
+\usepackage[cp1250]{inputenc}
+%\usepackage{polski}
+%\usepackage[utf8]{inputenc}
+\beamersetaveragebackground{blue!10}
+\usetheme{Warsaw}
+\usecolortheme[rgb={0.1,0.5,0.7}]{structure}
+\usepackage{beamerthemesplit}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{amsmath} %pakiet matematyczny
+\usepackage{amssymb} %pakiet dodatkowych symboli
+
+\usepackage{xcolor,listings} %listingi
+\usepackage{setspace} %ustawianie interlini, fajnie wygladaja tabele, \singlespacing, \onehalfspacing, and
+    \lstset %ustawienia listingów dla c#
+    {
+        %%language={[Sharp]C},
+        backgroundcolor=\color{blue!10},
+        basicstyle=\scriptsize, %wielkoœæ czcionki listingu
+        keywordstyle=\color{blue},
+        identifierstyle=\color{black},
+        breaklines=true
+        literate={i"}{}0
+        {»}{}0
+        {?}{}0
+    }
+
+\title{Programy u¿ytkowe - æwiczenia 4}
+\date{}
+
+\begin{document}
+
+\frame
+{
+\begin{figure}[here]
+\vspace{6pt}
+\begin{center}
+\includegraphics[scale=0.4]{images.jpg}
+\end{center}
+\vspace{6pt}
+\end{figure}
+
+\maketitle
+
+\begin{columns}
+\column{0.5\textwidth}
+\includegraphics[scale=0.25]{RCI1.jpg}
+\end{columns}
+}
+
+
+
+
+\section{Zadanie do wykonania}
+
+\frame
+{
+\frametitle{Zadanie do wykonania}
+\begin{block}
+{}
+Stwórz na pulpicie katalog w formacie ImieStudenta\_NazwiskoStudenta
+\end{block}
+\begin{block}
+{}
+Œci¹gnij plik: http://wmii.uwm.edu.pl/$\sim$artem/TEX/4.tex i zapisz plik do utworzonego wczeœniej katalogu, otwórz programem TexWorks i skompiluj, (pierwsza kompilacja mo¿e trwaæ kilka minut)
+\end{block}
+\begin{block}
+{}
+Przeczytaj Sekcjê drug¹ wprowadzaj¹c¹ do teorii tworzenia prezentacji w TeXu, podczas czytania sprawdzaj dzia³anie poszczególnych kodów wpisuj¹c je do pliku 4.tex i kompiluj¹c, (w razie problemu z kompilacj¹, lokalizuj b³¹d przegl¹daj¹c raport z kompilacji).
+\end{block}
+}
+
+\frame
+{
+\frametitle{Zadanie do wykonania - cd.}
+\begin{block}
+{}
+Wyszukaj w Wikipedii dowolne zagadnienie i przedstaw je w postaci prezentacji Beamera, prezentacja powinna zawieraæ minimum 10 niepustych slajdów.
+\end{block}
+\begin{alertblock}
+{}
+W przypadku, gdy materia³y wprowadzaj¹ce nie s¹ wystarczaj¹ce do wykonania zadania, przejrzyj kurs online,
+\\
+http://www.latex-kurs.x25.pl/
+\end{alertblock}
+}
+
+
+\section{Wprowadzenie do Beamera}
+
+Kod TeX Nag³ówka Beamera
+
+\begin{singlespacing}
+\begin{lstlisting}
+\documentclass[]{beamer}
+%\usepackage[MeX]{polski}
+%\usepackage[cp1250]{inputenc}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\beamersetaveragebackground{blue!10}
+\usetheme{Warsaw}
+\usecolortheme[rgb={0.1,0.5,0.7}]{structure}
+\usepackage{beamerthemesplit}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{amsmath} %pakiet matematyczny
+\usepackage{amssymb} %pakiet dodatkowych symboli
+\end{lstlisting}
+\end{singlespacing}
+
+\frame
+{
+\frametitle{Beamer vs inne klasy dokumentów w TeXu}
+\begin{block}
+{}
+W Beamerze podobnie jak w innych klasach TeXa u¿ywamy wiêkszoœci tych samych instrukcji, miedzy innymi podobnie tworzymy stronê tytu³ow¹, u¿ywamy formu³ matematycznych,
+wstawiamy grafikê, tabele, wypunktowanie, numeracjê, itp.
+\end{block}
+}
+
+\frame
+{
+\frametitle{Kod TeX podstawowej ramki slajdu}
+$\backslash$frame\\
+\{\\
+$\backslash$frametitle\{Podstawowa ramka slajdu\}\\
+\%tu wpisujemy treœæ wyœwietlan¹ w ramce\\
+\}
+}
+
+\frame
+{
+\frametitle{Pusta ramka}
+}
+
+\frame
+{
+\frametitle{Kod TeX œrodowiska block, exampleblock oraz alertblock}
+$\backslash$frame\\
+\{\\
+$\backslash$begin\{block\}\\
+\{Opis bloku1\}\\
+treœæ bloku\\
+$\backslash$end\{block\}\\
+$\backslash$begin\{exampleblock\}\\
+\{Opis bloku2\}\\
+treœæ bloku\\
+$\backslash$end\{exampleblock\}\\
+$\backslash$begin\{alertblock\}\\
+\{Opis bloku3\}\\
+treœæ bloku\\
+$\backslash$end\{alertblock\}\\
+\}
+}
+
+\frame
+{
+\frametitle{Przyk³adowe u¿ycie œrodowiska block, exampleblock, alertblock}
+\begin{block}
+{Opis bloku1}
+treœæ bloku
+\end{block}
+\begin{exampleblock}
+{Opis bloku2}
+treœæ bloku
+\end{exampleblock}
+\begin{alertblock}
+{Opis bloku3}
+treœæ bloku
+\end{alertblock}
+
+}
+
+
+\frame
+{
+\frametitle{Kod TeX pozwalaj¹cy na wstawianie grafiki}
+$\backslash$frame\\
+\{\\
+$\backslash$begin\{figure\}[here]\\
+$\backslash$begin\{center\}\\
+$\backslash$includegraphics[scale=0.4]\{tygrys.jpg\}\\
+$\backslash$end\{center\}\\
+$\backslash$end\{figure\}\\
+\}
+}
+
+\frame
+{
+\begin{figure}[here]
+%\vspace{6pt}
+\begin{center}
+\includegraphics[scale=0.4]{tygrys.jpg}
+\end{center}
+%\vspace{6pt}
+\end{figure}
+}
+
+
+\frame
+{
+\frametitle{Kod TeX demonstruj¹cy u¿ycie œrodowiska column}
+$\backslash$frame\\
+\{\\
+$\backslash$begin\{columns\}\\
+$\backslash$column\{0.2$\backslash$textwidth\}\\
+$\backslash$includegraphics[scale=0.2]\{tygrys.jpg\}\\
+$\backslash$column\{0.4$\backslash$textwidth\}\\
+$\backslash$includegraphics[scale=0.2]\{tygrys.jpg\}\\
+$\backslash$end\{columns\}\\
+\}
+}
+
+
+\frame
+{
+\begin{columns}
+\column{0.2\textwidth}
+\includegraphics[scale=0.2]{tygrys.jpg}
+\column{0.4\textwidth}
+\includegraphics[scale=0.2]{tygrys.jpg}
+\end{columns}
+}
+
+
+
+
+\frame
+{
+\frametitle{Kod TeX œrodowiska itemize}
+$\backslash$frame\\
+\{\\
+$\backslash$frametitle\{Demonstracja œrodowiska itemize\}\\
+$\backslash$begin\{itemize\}\\
+$\backslash$item Podpunkt pierwszy\\
+$\backslash$item Podpunkt drugi\\
+$\backslash$item Podpunkt trzeci\\
+$\backslash$end\{itemize\}\\
+\}
+}
+
+\frame
+{
+\frametitle{Demonstracja œrodowiska itemize}
+\begin{itemize}
+\item Podpunkt pierwszy
+\item Podpunkt drugi
+\item Podpunkt trzeci
+\end{itemize}
+}
+
+\frame
+{
+\frametitle{Kod TeX œrodowiska itemize z u¿yciem instrukcji pause}
+$\backslash$frame\\
+\{\\
+$\backslash$frametitle\{Demonstracja œrodowiska itemize z u¿yciem instrukcji pause\}\\
+$\backslash$begin\{itemize\}\\
+$\backslash$item Podpunkt pierwszy $\backslash$pause\\
+$\backslash$item Podpunkt drugi $\backslash$pause\\
+$\backslash$item Podpunkt trzeci\\
+$\backslash$end\{itemize\}\\
+\}
+}
+
+\frame
+{
+\frametitle{Demonstracja œrodowiska itemize z u¿yciem instrukcji pause}
+\begin{itemize}
+\item Podpunkt pierwszy \pause
+\item Podpunkt drugi \pause
+\item Podpunkt trzeci
+\end{itemize}
+}
+
+\frame
+{
+\frametitle{Kod TeX œrodowiska itemize - ustalanie widocznoœci podpunktów}
+$\backslash$frame\\
+\{\\
+$\backslash$frametitle\{Demonstracja œrodowiska itemize z ustalaniem widocznoœci\}\\
+$\backslash$begin\{itemize\}\\
+$\backslash$item$<1-2>$ Podpunkt pierwszy\\
+$\backslash$item$<2-3>$ Podpunkt drugi\\
+$\backslash$item$<3>$ Podpunkt trzeci\\
+$\backslash$end\{itemize\}\\
+\}
+}
+
+
+\frame
+{
+\frametitle{Demonstracja œrodowiska itemize z wyœwietlaniem ustalonych podpunktów}
+\begin{itemize}
+\item<1-2> Podpunkt pierwszy
+\item<2-3> Podpunkt drugi
+\item<3> Podpunkt trzeci
+\end{itemize}
+}
+
+\frame
+{
+\frametitle{Kod TeX œrodowiska enumerate z u¿yciem instrukcji pause}
+$\backslash$frame\\
+\{\\
+$\backslash$frametitle\{Demonstracja œrodowiska enumerate z u¿yciem instrukcji pause\}\\
+$\backslash$begin\{enumerate\}\\
+$\backslash$item Podpunkt pierwszy $\backslash$pause\\
+$\backslash$item Podpunkt drugi $\backslash$pause\\
+$\backslash$item Podpunkt trzeci\\
+$\backslash$end\{enumerate\}\\
+\}
+}
+
+\frame
+{
+\frametitle{Demonstracja œrodowiska enumerate z u¿yciem instrukcji pause}
+\begin{enumerate}
+\item Podpunkt pierwszy \pause
+\item Podpunkt drugi \pause
+\item Podpunkt trzeci
+\end{enumerate}
+}
+
+
+\frame
+{
+\frametitle{Kod TeX Tabeli z u¿yciem instrukcji pause}
+$\backslash$frame\\
+\{\\
+$\backslash$begin\{table\}\\
+$\backslash$begin\{tabular\}\{c $|$ c $|$ c\}\\
+\$\$ \& \$a\_1\$ \& \$a\_2\$ $\backslash$$\backslash$\\
+$\backslash$hline\\
+\$x\_1\$ \& 2 \& 3 $\backslash$pause $\backslash \backslash$\\
+$\backslash$hline\\
+\$x\_2\$ \& 3 \& 4 $\backslash$pause $\backslash \backslash$\\
+$\backslash$hline\\
+\$x\_3\$ \& 1 \& 1\\
+$\backslash$end\{tabular\}\\
+$\backslash$end\{table\}\\
+\}
+}
+
+\frame
+{
+\frametitle{Demonstracja tworzenia Tabeli z u¿yciem instrukcji pause}
+\begin{table}
+\begin{tabular}{c | c | c}
+ & $a_1$ & $a_2$ \\
+\hline
+$x_1$ & 2 & 3 \pause \\
+\hline
+$x_2$ & 3 & 4 \pause \\
+\hline
+$x_3$ & 1 & 1
+\end{tabular}
+\end{table}
+}
+
+\end{document}
+

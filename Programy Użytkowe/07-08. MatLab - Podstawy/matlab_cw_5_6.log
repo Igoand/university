@@ -1,0 +1,288 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.1.17)  22 APR 2015 15:05
+entering extended mode
+**matlab_cw_5_6.tex
+("D:\Dropbox\Programy u≈ºytkowe\cw5-6 - matlab\matlab_cw_5_6.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(C:\Users\ksirg\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\polski.sty
+Package: polski 2008/02/24 v1.3.3 Polish language package
+
+Document language package `polski' v1.3.3 <2008/02/24>
+\l@nohyphenation=\language70
+   Switching to Polish text encoding and Polish maths fonts.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot4enc.def"
+File: ot4enc.def 2005/09/27 v1.99g Standard LaTeX file
+)
+LaTeX Font Info:    Try loading font information for OT4+cmr on input line 346.
+
+
+(C:\Users\ksirg\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\ot4cmr.fd
+File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT4/cmr/bx/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT4/cmss/m/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT4/cmr/m/it on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT4/cmtt/m/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT4/cmss/bx/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT4/cmr/bx/it on input line 346.
+LaTeX Font Info:    Encoding `OT1' has changed to `OT4' for symbol font
+(Font)              `operators' in the math version `normal' on input line 346.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT4/cmr/m/n on input line 346.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/plm/m/it on input line 346.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/plsy/m/n on input line 346.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/plex/m/n on input line 346.
+LaTeX Font Info:    Encoding `OT1' has changed to `OT4' for symbol font
+(Font)              `operators' in the math version `bold' on input line 346.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT4/cmr/bx/n on input line 346.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/plm/b/it on input line 346.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/plsy/b/n on input line 346.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\cp1250.def"
+File: cp1250.def 2008/03/30 v1.1d Input encoding file
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\enumerate.sty"
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks17
+)
+("D:\Dropbox\Programy u≈ºytkowe\cw5-6 - matlab\matlab_cw_5_6.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+
+(C:\Users\ksirg\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count89
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count90
+\nofMParguments=\count91
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count92
+\MPscratchDim=\dimen106
+\MPnumerator=\count93
+\makeMPintoPDFobject=\count94
+\everyMPtoPDFconversion=\toks19
+)
+LaTeX Font Info:    Try loading font information for OML+plm on input line 18.
+ (C:\Users\ksirg\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\omlplm.fd
+File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 18.
+
+
+(C:\Users\ksirg\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\omsplsy.fd
+File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 18.
+
+
+(C:\Users\ksirg\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\omxplex.fd
+File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <12> on input line 18.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <8> on input line 18.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <6> on input line 18.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
+ [1
+
+{C:/Users/ksirg/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
+
+ []
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <14.4> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 108.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <14.4> on input line 108.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <10> on input line 108.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <7> on input line 108.
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--181
+
+ []
+
+LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 183
+.
+(C:\Users\ksirg\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\ot4cmtt.fd
+File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+Overfull \hbox (80.32678pt too wide) in paragraph at lines 183--185
+[][]\OT4/cmr/m/n/12 Operacje na ele-men-tach ta-blic wy-ko-nu-je si¶ do-da-j°c 
+krop-k¶ przed zna-kiem dzia-™a-nia []  \OT4/cmtt/m/n/12 .+ ./  .* .^  \OT4/cmr/
+m/n/12 przy-
+ []
+
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 259--263
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+
+ []
+
+[7]
+Overfull \hbox (6.87425pt too wide) in paragraph at lines 293--293
+[][]\OT4/cmr/m/n/12 lower(),upper()| 
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 322--336
+
+ []
+
+[9] ("D:\Dropbox\Programy u≈ºytkowe\cw5-6 - matlab\matlab_cw_5_6.aux") ) 
+Here is how much of TeX's memory you used:
+ 1470 strings out of 494045
+ 20088 string characters out of 3148387
+ 75172 words of memory out of 3000000
+ 4762 multiletter control sequences out of 15000+200000
+ 14457 words of font info for 42 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 27i,8n,24p,750b,241s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Use
+rs/ksirg/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/plit.enc}{C:/Users/ksirg
+/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/plmi.enc}{C:/Users/ksirg/AppData
+/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/plms.enc}{C:/Users/ksirg/AppData/Roaming
+/MiKTeX/2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Users/ksirg/AppData/Roaming/MiKTeX/
+2.9/fonts/enc/dvips/pl/pltt.enc}{C:/Users/ksirg/AppData/Roaming/MiKTeX/2.9/font
+s/enc/dvips/pl/plme.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb><C:/Users/ksirg/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/p
+l/plbx12.pfb><C:/Users/ksirg/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/p
+lex10.pfb><C:/Users/ksirg/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plmi
+10.pfb><C:/Users/ksirg/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plmi12.
+pfb><C:/Users/ksirg/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plmi6.pfb>
+<C:/Users/ksirg/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plmi7.pfb><C:/
+Users/ksirg/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plmi8.pfb><C:/User
+s/ksirg/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plr10.pfb><C:/Users/ks
+irg/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/ksirg/
+AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plr6.pfb><C:/Users/ksirg/AppDa
+ta/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plr7.pfb><C:/Users/ksirg/AppData/Ro
+aming/MiKTeX/2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/ksirg/AppData/Roaming
+/MiKTeX/2.9/fonts/type1/public/pl/plsy10.pfb><C:/Users/ksirg/AppData/Roaming/Mi
+KTeX/2.9/fonts/type1/public/pl/plsy7.pfb><C:/Users/ksirg/AppData/Roaming/MiKTeX
+/2.9/fonts/type1/public/pl/plsy8.pfb><C:/Users/ksirg/AppData/Roaming/MiKTeX/2.9
+/fonts/type1/public/pl/plti12.pfb><C:/Users/ksirg/AppData/Roaming/MiKTeX/2.9/fo
+nts/type1/public/pl/pltt12.pfb>
+Output written on matlab_cw_5_6.pdf (9 pages, 139980 bytes).
+PDF statistics:
+ 110 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

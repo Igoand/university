@@ -1,0 +1,1086 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[MeX]{polski}
+\usepackage[cp1250]{inputenc}
+%%\usepackage{polski}
+%%\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{hyperref}
+\usepackage{makeidx}
+\usepackage[tableposition=top]{caption}
+\usepackage{algorithmic}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsmath} %pakiet matematyczny
+\usepackage{amssymb} %pakiet dodatkowych symboli
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{sidecap}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor,listings} %listingi
+\usepackage{setspace} %ustawianie interlini, fajnie wygladaja tabele, \singlespacing, \onehalfspacing, and
+
+    \lstset %ustawienia listingów dla c#
+    {
+        %%language={[Sharp]C},
+        backgroundcolor=\color{blue!10},
+        basicstyle=\scriptsize, %wielkoœæ czcionki listingu
+        keywordstyle=\color{blue},
+        identifierstyle=\color{black},
+        breaklines=true
+        literate={i"}{}0
+        {»}{}0
+        {?}{}0
+    }
+
+%%\pagestyle{empty}
+
+\makeindex
+\linespread{1.5}
+
+\begin{document}
+
+\begin{center} %%{\Large POLISH--JAPANISE INSTITUTE OF INFORMATION TECHNOLOGY}
+
+\begin{figure}[here]
+\vspace{6pt}
+\begin{center}
+\includegraphics[scale=0.8]{images.jpg}
+\end{center}
+\vspace{6pt}
+\end{figure}
+
+\vspace{\stretch{1}}{}
+
+\vspace{\stretch{2}}{\Large Programy u¿ytkowe - æwiczenia 3}
+\vspace{\stretch{3}}\end{center}
+
+\begin{figure}[here]
+\vspace{6pt}
+\begin{center}
+\includegraphics[scale=0.8]{images.jpg}
+\end{center}
+\vspace{6pt}
+\end{figure}
+
+%\setcounter{page}{4}
+
+\section{Zadanie do wykonania}
+$\bullet$ Stwórz na pulpicie katalog w formacie ImieStudenta\_NazwiskoStudenta
+\\
+$\bullet$ Œci¹gnij plik: http://wmii.uwm.edu.pl/$\sim$artem/TEX/1.tex
+i zapisz plik do utworzonego wczeœniej katalogu, otwórz programem TexWorks i skompiluj,
+\\
+$\bullet$ Przeczytaj Sekcjê drug¹ i trzec¹ wprowadzaj¹ce do teorii tworzenia tabel i wstawiania grafiki do TeXa, podczas czytania sprawdzaj dzia³anie poszczególnych kodów wpisuj¹c je do pliku 1.tex i kompiluj¹c,
+\\
+$\bullet$ Sformatuj do postaci TeXa wskazane przez wyk³adowcê tabele z Sekcji czwartej, oraz przedstaw w wybranej formie obrazki wskazane przez wyk³adowcê wyszukane w sieci Internet.
+\\
+\\
+W przypadku, gdy materia³y wprowadzaj¹ce nie s¹ wystarczaj¹ce, przejrzyj kurs online,
+\\
+http://www.latex-kurs.x25.pl/
+
+\section{Czêœæ Teoretyczna - Tabele w TeXu}
+
+\subsection{Pakiety, których mo¿e brakowaæ w nag³ówku pliku 1.tex}
+
+$\backslash$usepackage\{multirow\}
+$\backslash$usepackage[table]\{xcolor\}
+$\backslash$usepackage\{booktabs\}
+$\backslash$usepackage\{sidecap\}
+$\backslash$usepackage\{wrapfig\}
+$\backslash$usepackage\{caption\}
+$\backslash$usepackage\{subcaption\}
+
+\subsection{Tabela bez linii ograniczaj¹cych}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{table}[here]
+\centering \caption{Tu wstawiamy opis Tabeli - tabela jest bez linii podzia³u, treœæ poszczególnych komórek jest wyœrodkowana}
+\begin{tabular}{cccc}
+  obiekt & $a_1$ & $a_2$ & $a_3$ \\
+  $x_1$ & $1$ & $4$ & $3$ \\
+  $x_2$ & $1$ & $4$ & $3$ \\
+  $x_3$ & $1$ & $4$ & $3$ \\
+  $x_4$ & $1$ & $4$ & $3$ \\
+\end{tabular}
+\end{table}
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+
+\begin{table}[here]
+\centering \caption{Tu wstawiamy opis Tabeli - tabela jest bez linii podzia³u, treœæ poszczególnych komórek jest wyœrodkowana}
+\begin{tabular}{cccc}
+  obiekt & $a_1$ & $a_2$ & $a_3$ \\
+  $x_1$ & $1$ & $4$ & $3$ \\
+  $x_2$ & $1$ & $4$ & $3$ \\
+  $x_3$ & $1$ & $4$ & $3$ \\
+  $x_4$ & $1$ & $4$ & $3$ \\
+\end{tabular}
+\end{table}
+
+\subsection{Tabela z u¿yciem linii pionowych}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{table}[here]
+\centering \caption{Tu wstawiamy opis Tabeli - tabela zawiera pionowe linie podzia³u, tworzone znakiem | wstawianym $\backslash$begin{tabular} hline treœæ poszczególnych komórek jest wyœrodkowana}
+\begin{tabular}{c|c|c|c}
+  obiekt & $a_1$ & $a_2$ & $a_3$ \\
+  $x_1$ & $1$ & $4$ & $3$ \\
+  $x_2$ & $1$ & $4$ & $3$ \\
+  $x_3$ & $1$ & $4$ & $3$ \\
+  $x_4$ & $1$ & $4$ & $3$ \\
+\end{tabular}
+\end{table}
+\end{lstlisting}
+\end{singlespacing}
+
+\clearpage
+
+\subsubsection{pdf po kompilacji}
+\begin{table}[here]
+\centering \caption{Tu wstawiamy opis Tabeli - tabela zawiera pionowe linie podzia³u, tworzone znakiem | wstawianym $\backslash$begin{tabular} hline treœæ poszczególnych komórek jest wyœrodkowana}
+\begin{tabular}{c|c|c|c}
+  obiekt & $a_1$ & $a_2$ & $a_3$ \\
+  $x_1$ & $1$ & $4$ & $3$ \\
+  $x_2$ & $1$ & $4$ & $3$ \\
+  $x_3$ & $1$ & $4$ & $3$ \\
+  $x_4$ & $1$ & $4$ & $3$ \\
+\end{tabular}
+\end{table}
+
+\subsection{Tabela z u¿yciem linii poziomych}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{table}[here]
+\centering \caption{Tu wstawiamy opis Tabeli - tabela zawiera poziome linie podzia³u, tworzone pleceniem $\backslash$hline treœæ poszczególnych komórek jest wyœrodkowana}
+\begin{tabular}{cccc}
+  obiekt & $a_1$ & $a_2$ & $a_3$ \\
+  \hline
+  $x_1$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_2$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_3$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_4$ & $1$ & $4$ & $3$ \\
+\end{tabular}
+\end{table}
+\end{lstlisting}
+\end{singlespacing}
+
+\subsubsection{pdf po kompilacji}
+
+\begin{table}[here]
+\centering \caption{Tu wstawiamy opis Tabeli - tabela zawiera poziome linie podzia³u, tworzone pleceniem $\backslash$hline treœæ poszczególnych komórek jest wyœrodkowana}
+\begin{tabular}{cccc}
+  obiekt & $a_1$ & $a_2$ & $a_3$ \\
+  \hline
+  $x_1$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_2$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_3$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_4$ & $1$ & $4$ & $3$ \\
+\end{tabular}
+\end{table}
+
+\clearpage
+
+\subsection{Tabela z u¿yciem linii poziomych i pionowych z wycentrowanymi wartoœciami - opcja c}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{table}[here]
+\centering \caption{Tu wstawiamy opis Tabeli - tabela zawiera pionowe i poziome linie podzia³u, tworzone znakiem | wstawianym $\backslash$begin{tabular} hline - WARTOŒCI WYRÓWNANE DO ŒRODKA KOMÓREK - opcja c}
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  obiekt & $a_1$ & $a_2$ & $a_3$ \\
+  \hline
+  \hline
+  $x_1$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_2$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_3$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_4$ & $1$ & $4$ & $3$ \\
+  \hline
+\end{tabular}
+\end{table}
+\end{lstlisting}
+\end{singlespacing}
+
+\subsubsection{pdf po kompilacji}
+\begin{table}[here]
+\centering \caption{Tu wstawiamy opis Tabeli - tabela zawiera pionowe i poziome linie podzia³u, tworzone znakiem | wstawianym $\backslash$begin{tabular} hline - WARTOŒCI WYRÓWNANE DO ŒRODKA KOMÓREK - opcja c}
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  obiekt & $a_1$ & $a_2$ & $a_3$ \\
+  \hline
+  \hline
+  $x_1$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_2$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_3$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_4$ & $1$ & $4$ & $3$ \\
+  \hline
+\end{tabular}
+\end{table}
+
+\clearpage
+
+\subsection{Tabela z u¿yciem linii poziomych i pionowych z wyrównanymi do lewej strony wartoœciami - opcja l}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{table}[here]
+\centering \caption{Tu wstawiamy opis Tabeli - tabela zawiera pionowe i poziome linie podzia³u, tworzone znakiem | wstawianym $\backslash$begin{tabular} hline - WARTOŒCI WYRÓWNANE DO LEWEJ STRONY KOMÓREK - opcja l}
+\begin{tabular}{|l|l|l|l|}
+  \hline
+  obiekt & $a_1$ & $a_2$ & $a_3$ \\
+  \hline
+  \hline
+  $x_1$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_2$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_3$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_4$ & $1$ & $4$ & $3$ \\
+  \hline
+\end{tabular}
+\end{table}
+\end{lstlisting}
+\end{singlespacing}
+
+\subsubsection{pdf po kompilacji}
+\begin{table}[here]
+\centering \caption{Tu wstawiamy opis Tabeli - tabela zawiera pionowe i poziome linie podzia³u, tworzone znakiem | wstawianym $\backslash$begin{tabular} hline - WARTOŒCI WYRÓWNANE DO LEWEJ STRONY KOMÓREK - opcja l}
+\begin{tabular}{|l|l|l|l|}
+  \hline
+  obiekt & $a_1$ & $a_2$ & $a_3$ \\
+  \hline
+  \hline
+  $x_1$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_2$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_3$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_4$ & $1$ & $4$ & $3$ \\
+  \hline
+\end{tabular}
+\end{table}
+
+\clearpage
+
+\subsection{Tabela z u¿yciem linii poziomych i pionowych z wyrównanymi do prawej strony wartoœciami - opcja r}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{table}[here]
+\centering \caption{Tu wstawiamy opis Tabeli - tabela zawiera pionowe i poziome linie podzia³u, tworzone znakiem | wstawianym $\backslash$begin{tabular} hline - WARTOŒCI WYRÓWNANE DO PRAWEJ STRONY KOMÓREK - opcja r}
+\begin{tabular}{|r|r|r|r|}
+  \hline
+  obiekt & $a_1$ & $a_2$ & $a_3$ \\
+  \hline
+  \hline
+  $x_1$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_2$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_3$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_4$ & $1$ & $4$ & $3$ \\
+  \hline
+\end{tabular}
+\end{table}
+\end{lstlisting}
+\end{singlespacing}
+
+\subsubsection{pdf po kompilacji}
+\begin{table}[here]
+\centering \caption{Tu wstawiamy opis Tabeli - tabela zawiera pionowe i poziome linie podzia³u, tworzone znakiem | wstawianym $\backslash$begin{tabular} hline - WARTOŒCI WYRÓWNANE DO PRAWEJ STRONY KOMÓREK - opcja r}
+\begin{tabular}{|r|r|r|r|}
+  \hline
+  obiekt & $a_1$ & $a_2$ & $a_3$ \\
+  \hline
+  \hline
+  $x_1$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_2$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_3$ & $1$ & $4$ & $3$ \\
+  \hline
+  $x_4$ & $1$ & $4$ & $3$ \\
+  \hline
+\end{tabular}
+\end{table}
+
+\clearpage
+
+\subsection{Tabela, w której u¿ywamy opcji multirow, pozwalaj¹cej na ³¹czenie wierszy komórki}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{table}[h]
+\begin{center}
+\caption{U¿ycie w tabeli instrukcji $\backslash$multirow}
+\begin{tabular}{ c | c | c }
+  \hline
+  $$ & $u_1$ & $u_2$\\
+  \hline
+  $u_2$ & $\phi$ & $\phi$ \\
+  \hline
+  \multirow{3}{*}{$u_3$} & $a_1,a_2,a_3,$ & \multirow{3}{*}{$a_1$} \\
+  $$ & $a_4, a_5$ & $$ \\
+  $$ & $a_6$ & $$ \\
+  \hline
+\end{tabular}
+\end{center}
+\end{table}
+\end{lstlisting}
+\end{singlespacing}
+
+\subsubsection{pdf po kompilacji}
+
+\begin{table}[h]
+\begin{center}
+\caption{U¿ycie w tabeli instrukcji $\backslash$multirow}
+\begin{tabular}{ c | c | c }
+  \hline
+  $$ & $u_1$ & $u_2$\\
+  \hline
+  $u_2$ & $\phi$ & $\phi$ \\
+  \hline
+  \multirow{3}{*}{$u_3$} & $a_1,a_2,a_3,$ & \multirow{3}{*}{$a_1$} \\
+  $$ & $a_4, a_5$ & $$ \\
+  $$ & $a_6$ & $$ \\
+  \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Tabela, w której u¿ywamy opcji TINY - zmniejszanie}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{table}[h]
+\begin{center}
+\caption{U¿ycie w tabeli instrukcji $\backslash$multirow - ORAZ OPCJA TINY POZWALAJ¥CA NA ZMNIEJSZANIE ROZMIARU TABLICY}
+\begin{tiny}
+\begin{tabular}{ c | c | c }
+  \hline
+  $$ & $u_1$ & $u_2$\\
+  \hline
+  $u_2$ & $\phi$ & $\phi$ \\
+  \hline
+  \multirow{3}{*}{$u_3$} & $a_1,a_2,a_3,$ & \multirow{3}{*}{$a_1$} \\
+  $$ & $a_4, a_5$ & $$ \\
+  $$ & $a_6$ & $$ \\
+  \hline
+\end{tabular}
+\end{tiny}
+\end{center}
+\end{table}
+\end{lstlisting}
+\end{singlespacing}
+
+\subsubsection{pdf po kompilacji}
+
+\begin{table}[h]
+\begin{center}
+\caption{U¿ycie w tabeli instrukcji $\backslash$multirow - ORAZ OPCJA TINY POZWALAJ¥CA NA ZMNIEJSZANIE ROZMIARU TABLICY}
+\begin{tiny}
+\begin{tabular}{ c | c | c }
+  \hline
+  $$ & $u_1$ & $u_2$\\
+  \hline
+  $u_2$ & $\phi$ & $\phi$ \\
+  \hline
+  \multirow{3}{*}{$u_3$} & $a_1,a_2,a_3,$ & \multirow{3}{*}{$a_1$} \\
+  $$ & $a_4, a_5$ & $$ \\
+  $$ & $a_6$ & $$ \\
+  \hline
+\end{tabular}
+\end{tiny}
+\end{center}
+\end{table}
+
+\subsection{Tabela, w której u¿ywamy œrodowiska multicolumn - pozwalaj¹cego na ³¹czenie kolumn w komórkach}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{table*}
+\centering
+\begin{tabular}{c | c | c | c | c | c | c |}
+\hline
+Obiekt & \multicolumn{3}{c}{opis1} & \multicolumn{3}{c}{opis2}\\
+\hline
+ & 1 & 2 & 3 & 4 & 5 & 6\\
+\hline
+  x1 & 1 & 3 & 34 & 87 & 92 & 96 \\
+ x2 & 2 & 54 & 234 & 243 & 95 & 97 \\
+\hline
+\end{tabular}
+\caption{U¿ycie instrukcji multicolumn.}
+\end{table*}
+
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+
+\begin{table*}
+\centering
+\begin{tabular}{c | c | c | c | c | c | c |}
+\hline
+Obiekt & \multicolumn{3}{c}{opis1} & \multicolumn{3}{c}{opis2}\\
+\hline
+ & 1 & 2 & 3 & 4 & 5 & 6\\
+\hline
+  x1 & 1 & 3 & 34 & 87 & 92 & 96 \\
+ x2 & 2 & 54 & 234 & 243 & 95 & 97 \\
+\hline
+\end{tabular}
+\caption{U¿ycie instrukcji multicolumn.}
+\end{table*}
+
+\clearpage
+
+\subsection{Tabela, u¿ycie instrukcji cline}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{tabular}{|r|l|}
+  \hline
+  7C0 & hexadecimal \\
+  3700 & octal \\ \cline{2-2}
+  11111000000 & binary \\
+  \hline \hline
+  1984 & decimal \\
+  \hline
+\end{tabular}
+\end{lstlisting}
+\end{singlespacing}
+
+\subsubsection{pdf po kompilacji}
+\begin{tabular}{|r|l|}
+  \hline
+  7C0 & hexadecimal \\
+  3700 & octal \\ \cline{2-2}
+  11111000000 & binary \\
+  \hline \hline
+  1984 & decimal \\
+  \hline
+\end{tabular}
+
+\subsection{Okreœlanie szerokoœci komórki}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    Day & Min Temp & Max Temp & Summary \\ \hline
+    Monday & 11C & 22C & A clear day with lots of sunshine.
+    However, the strong breeze will bring down the temperatures. \\ \hline
+    Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
+    across most of Scotland and Northern Ireland,
+    but rain reaching the far northwest. \\ \hline
+    Wednesday & 10C & 21C & Rain will still linger for the morning.
+    Conditions will improve by early afternoon and continue
+    throughout the evening. \\
+    \hline
+    \end{tabular}
+\end{center}
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    Day & Min Temp & Max Temp & Summary \\ \hline
+    Monday & 11C & 22C & A clear day with lots of sunshine.
+    However, the strong breeze will bring down the temperatures. \\ \hline
+    Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
+    across most of Scotland and Northern Ireland,
+    but rain reaching the far northwest. \\ \hline
+    Wednesday & 10C & 21C & Rain will still linger for the morning.
+    Conditions will improve by early afternoon and continue
+    throughout the evening. \\
+    \hline
+    \end{tabular}
+\end{center}
+
+\subsection{Kolorowanie wierszy}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{center}
+\rowcolors{1}{green}{pink}
+\begin{tabular}{lll}
+xxx     & xxx   & 333 \\
+xxx    & xzx  & fdf\\
+yyy     & zzz   & gdf \\
+yyy    & zzz  & dgd\\
+\end{tabular}
+\end{center}
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+\begin{center}
+\rowcolors{1}{green}{pink}
+\begin{tabular}{lll}
+xxx     & xxx   & 333 \\
+xxx    & xzx  & fdf\\
+yyy     & zzz   & gdf \\
+yyy    & zzz  & dgd\\
+\end{tabular}
+\end{center}
+
+\clearpage
+
+\section{Figury w TeXu}
+
+\subsection{Wyœwietlanie grafiki R2D2.jpg}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{figure}[h!]
+  \caption{A picture of a R2D2}
+  \centering
+    \includegraphics[width=0.5\textwidth]{R2D2.jpg}
+\end{figure}
+\end{lstlisting}
+\end{singlespacing}
+
+\subsubsection{pdf po kompilacji}
+\begin{figure}[h!]
+  \caption{A picture of a R2D2}
+  \centering
+    \includegraphics[width=0.5\textwidth]{R2D2.jpg}
+\end{figure}
+
+\subsection{Wyœwietlanie grafiki z odbiciem}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{figure}[h!]
+  \caption{A picture of a gull.}
+  \centering
+    \includegraphics[width=0.5\textwidth]{tygrys.jpg}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+    \reflectbox{%
+      \includegraphics[width=0.5\textwidth]{tygrys.jpg}}
+  \caption{A picture of the same gull
+           looking the other way!}
+\end{figure}
+\end{lstlisting}
+\end{singlespacing}
+\subsubsection{pdf po kompilacji}
+\begin{figure}[h!]
+  \caption{Obrazek X}
+  \centering
+    \includegraphics[width=0.5\textwidth]{tygrys.jpg}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+    \reflectbox{%
+      \includegraphics[width=0.5\textwidth]{tygrys.jpg}}
+  \caption{Odbicie Obrazka X}
+\end{figure}
+
+\subsection{Wyœwietlanie wielu obrazków jednoczeœnie}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{figure}[here]
+\vspace{0pt}
+\begin{center}
+\includegraphics[scale=0.1]{R2D2.jpg}
+\includegraphics[scale=0.1]{R2D2.jpg}
+\includegraphics[scale=0.1]{R2D2.jpg}
+\includegraphics[scale=0.1]{R2D2.jpg}
+\caption{Wyœwietlanie wielu obrazków jednoczeœnie}
+\end{center}
+\vspace{0pt}
+\end{figure}
+\end{lstlisting}
+\end{singlespacing}
+
+\clearpage
+
+\subsubsection{pdf po kompilacji}
+\begin{figure}[here]
+\vspace{0pt}
+\begin{center}
+\includegraphics[scale=0.1]{R2D2.jpg}
+\includegraphics[scale=0.1]{R2D2.jpg}
+\includegraphics[scale=0.1]{R2D2.jpg}
+\includegraphics[scale=0.1]{R2D2.jpg}
+\caption{Wyœwietlanie wielu obrazków jednoczeœnie}
+\end{center}
+\vspace{0pt}
+\end{figure}
+
+\subsection{Rysowanie za pomoc¹ krzywych Beziera}
+
+\subsubsection{Kod TeXa przed kompilacj¹}
+\begin{singlespacing}
+\begin{lstlisting}
+\begin{figure}
+\vspace{0pt}
+\begin{center}
+\definecolor{szary}{rgb}{0.8,0.8,0.8}
+\colorbox{white}{
+\setlength{\unitlength}{0.6mm}
+\begin{picture}(210,220)(0,0)
+\linethickness{0.3mm}
+%%siatka pionowa
+\textcolor{szary}{\qbezier(14.2857,0)(14.2857,100)(14.2857,200)\qbezier(28.5714,0)(28.5714,100)(28.5714,200)\qbezier(42.8571,0)(42.8571,100)(42.8571,200)\qbezier(57.1429,0)(57.1429,100)(57.1429,200)\qbezier(71.4286,0)(71.4286,100)(71.4286,200)\qbezier(85.7143,0)(85.7143,100)(85.7143,200)\qbezier(100,0)(100,100)(100,200)\qbezier(114.286,0)(114.286,100)(114.286,200)\qbezier(128.571,0)(128.571,100)(128.571,200)\qbezier(142.857,0)(142.857,100)(142.857,200)\qbezier(157.143,0)(157.143,100)(157.143,200)\qbezier(171.429,0)(171.429,100)(171.429,200)\qbezier(185.714,0)(185.714,100)(185.714,200)\qbezier(200,0)(200,100)(200,200)}%
+%%siatka pozioma
+\textcolor{szary}{\qbezier(0,10)(100,10)(200,10)\qbezier(0,20)(100,20)(200,20)\qbezier(0,30)(100,30)(200,30)\qbezier(0,40)(100,40)(200,40)\qbezier(0,50)(100,50)(200,50)\qbezier(0,60)(100,60)(200,60)\qbezier(0,70)(100,70)(200,70)\qbezier(0,80)(100,80)(200,80)\qbezier(0,90)(100,90)(200,90)\qbezier(0,100)(100,100)(200,100)\qbezier(0,110)(100,110)(200,110)\qbezier(0,120)(100,120)(200,120)\qbezier(0,130)(100,130)(200,130)\qbezier(0,140)(100,140)(200,140)\qbezier(0,150)(100,150)(200,150)\qbezier(0,160)(100,160)(200,160)\qbezier(0,170)(100,170)(200,170)\qbezier(0,180)(100,180)(200,180)\qbezier(0,190)(100,190)(200,190)\qbezier(0,200)(100,200)(200,200)}%
+{\put(201,3){$r_{gran}$}}%
+{\put(2,210){Accuracy}}%
+%%podzialka osi x
+\qbezier(14.2857,-2)(14.2857,0)(14.2857,2)\qbezier(28.5714,-2)(28.5714,0)(28.5714,2)\qbezier(42.8571,-2)(42.8571,0)(42.8571,2)\qbezier(57.1429,-2)(57.1429,0)(57.1429,2)\qbezier(71.4286,-2)(71.4286,0)(71.4286,2)\qbezier(85.7143,-2)(85.7143,0)(85.7143,2)\qbezier(100,-2)(100,0)(100,2)\qbezier(114.286,-2)(114.286,0)(114.286,2)\qbezier(128.571,-2)(128.571,0)(128.571,2)\qbezier(142.857,-2)(142.857,0)(142.857,2)\qbezier(157.143,-2)(157.143,0)(157.143,2)\qbezier(171.429,-2)(171.429,0)(171.429,2)\qbezier(185.714,-2)(185.714,0)(185.714,2)\qbezier(200,-2)(200,0)(200,2)
+{\put(-1,-7){0}}{\put(13.2857,-12){0.0714286}}{\put(27.5714,-7){0.142857}}{\put(41.8571,-12){0.214286}}{\put(56.1429,-7){0.285714}}{\put(70.4286,-12){0.357143}}{\put(84.7143,-7){0.428571}}{\put(99,-12){0.5}}{\put(113.286,-7){0.571429}}{\put(127.571,-12){0.642857}}{\put(141.857,-7){0.714286}}{\put(156.143,-12){0.785714}}{\put(170.429,-7){0.857143}}{\put(184.714,-12){0.928571}}{\put(199,-7){1}}
+\multiput(0,0)(0,20){10}{\qbezier(-2,20)(0,20)(2,20)}%%podzialka osi y
+\multiput(0,0)(0,10){20}{\qbezier(-1,10)(0,10)(1,10)}%%podzialka osi y
+{\put(-13,18){0.1}\put(-13,38){0.2}\put(-13,58){0.3}\put(-13,78){0.4}\put(-13,98){0.5}
+\put(-13,118){0.6}\put(-13,138){0.7}\put(-13,158){0.8}\put(-13,178){0.9}\put(-13,198){1.0}}%
+\put(0,0){\vector(1,0){210}}%% os x
+\put(0,0){\vector(0,1){220}}%% os y
+%%legenda
+%%wykresy
+\textcolor{green}{\qbezier(0,88.9856)(7.14286,88.9856)(14.2857,88.9856)
+\put(7.14286,88.9856){\circle{3}}\qbezier(14.2857,88.9856)(21.4286,88.9856)(28.5714,88.9856)
+\put(21.4286,88.9856){\circle{3}}\qbezier(28.5714,88.9856)(35.7143,126.667)(42.8571,164.348)
+\put(35.7143,126.667){\circle{3}}\qbezier(42.8571,164.348)(50,163.536)(57.1429,162.725)
+\put(50,163.536){\circle{3}}\qbezier(57.1429,162.725)(64.2857,165.392)(71.4286,168.058)
+\put(64.2857,165.392){\circle{3}}\qbezier(71.4286,168.058)(78.5714,168.319)(85.7143,168.58)
+\put(78.5714,168.319){\circle{3}}\qbezier(85.7143,168.58)(92.8571,167.826)(100,167.072)
+\put(92.8571,167.826){\circle{3}}\qbezier(100,167.072)(107.143,167.507)(114.286,167.942)
+\put(107.143,167.507){\circle{3}}\qbezier(114.286,167.942)(121.429,166.174)(128.571,164.406)
+\put(121.429,166.174){\circle{3}}\qbezier(128.571,164.406)(135.714,163.159)(142.857,161.913)
+\put(135.714,163.159){\circle{3}}\qbezier(142.857,161.913)(150,161.507)(157.143,161.101)
+\put(150,161.507){\circle{3}}\qbezier(157.143,161.101)(164.286,160.609)(171.429,160.116)
+\put(164.286,160.609){\circle{3}}\qbezier(171.429,160.116)(178.571,160.203)(185.714,160.29)
+\put(178.571,160.203){\circle{3}}\qbezier(185.714,160.29)(192.857,160.29)(200,160.29)
+\put(192.857,160.29){\circle{3}}}%
+\textcolor{blue}{\qbezier(0,88.9854)(7.14286,88.9854)(14.2857,88.9854)
+\put(7.14286,88.9854){\circle*{3}}\qbezier(14.2857,88.9854)(21.4286,88.9854)(28.5714,88.9854)
+\put(21.4286,88.9854){\circle*{3}}\qbezier(28.5714,88.9854)(35.7143,88.9854)(42.8571,88.9854)
+\put(35.7143,88.9854){\circle*{3}}\qbezier(42.8571,88.9854)(50,88.9854)(57.1429,88.9854)
+\put(50,88.9854){\circle*{3}}\qbezier(57.1429,88.9854)(64.2857,114.899)(71.4286,140.812)
+\put(64.2857,114.899){\circle*{3}}\qbezier(71.4286,140.812)(78.5714,147.855)(85.7143,154.899)
+\put(78.5714,147.855){\circle*{3}}\qbezier(85.7143,154.899)(92.8571,160.783)(100,166.667)
+\put(92.8571,160.783){\circle*{3}}\qbezier(100,166.667)(107.143,166.754)(114.286,166.84)
+\put(107.143,166.754){\circle*{3}}\qbezier(114.286,166.84)(121.429,165.942)(128.571,165.043)
+\put(121.429,165.942){\circle*{3}}\qbezier(128.571,165.043)(135.714,163.449)(142.857,161.855)
+\put(135.714,163.449){\circle*{3}}\qbezier(142.857,161.855)(150,161.073)(157.143,160.29)
+\put(150,161.073){\circle*{3}}\qbezier(157.143,160.29)(164.286,159.681)(171.429,159.072)
+\put(164.286,159.681){\circle*{3}}\qbezier(171.429,159.072)(178.571,159.188)(185.714,159.304)
+\put(178.571,159.188){\circle*{3}}\qbezier(185.714,159.304)(192.857,159.304)(200,159.304)
+\put(192.857,159.304){\circle*{3}}}%
+\textcolor{black}{\qbezier(0,88.9856)(7.14286,88.9856)(14.2857,88.9856)
+\qbezier(14.2857,88.9856)(21.4286,88.9856)(28.5714,88.9856)
+\qbezier(28.5714,88.9856)(35.7143,88.9856)(42.8571,88.9856)
+\qbezier(42.8571,88.9856)(50,118.319)(57.1429,147.652)
+\qbezier(57.1429,147.652)(64.2857,156.087)(71.4286,164.522)
+\qbezier(71.4286,164.522)(78.5714,165.101)(85.7143,165.681)
+\qbezier(85.7143,165.681)(92.8571,165.13)(100,164.58)
+\qbezier(100,164.58)(107.143,166.87)(114.286,169.159)
+\qbezier(114.286,169.159)(121.429,168.145)(128.571,167.131)
+\qbezier(128.571,167.131)(135.714,162.696)(142.857,158.261)
+\qbezier(142.857,158.261)(150,158.667)(157.143,159.073)
+\qbezier(157.143,159.073)(164.286,158.841)(171.429,158.609)
+\qbezier(171.429,158.609)(178.571,158.841)(185.714,159.072)
+\qbezier(185.714,159.072)(192.857,158.986)(200,158.899)
+\textcolor{green}{\qbezier(90,216)(100,216)(110,216) \put(100,216){\circle{3}} \put(111,215){covering by granules of minimal size}}
+\textcolor{blue}{\qbezier(88,206)(93,206)(108,206) \put(98,206){\circle*{3}} \put(109,205){covering by granules of maximal size}}
+\textcolor{black}{\qbezier(86,211)(91,211)(106,211) \put(107,210){covering by granules of average size}}
+}%
+\end{picture}}
+\end{center}
+\end{figure}
+\end{lstlisting}
+\end{singlespacing}
+
+\clearpage
+
+\subsubsection{pdf po kompilacji}
+
+\begin{figure}[h]
+\vspace{0pt}
+\begin{center}
+\definecolor{szary}{rgb}{0.8,0.8,0.8}
+\colorbox{white}{
+\setlength{\unitlength}{0.6mm}
+\begin{picture}(210,220)(0,0)
+\linethickness{0.3mm}
+%%siatka pionowa
+\textcolor{szary}{\qbezier(14.2857,0)(14.2857,100)(14.2857,200)\qbezier(28.5714,0)(28.5714,100)(28.5714,200)\qbezier(42.8571,0)(42.8571,100)(42.8571,200)\qbezier(57.1429,0)(57.1429,100)(57.1429,200)\qbezier(71.4286,0)(71.4286,100)(71.4286,200)\qbezier(85.7143,0)(85.7143,100)(85.7143,200)\qbezier(100,0)(100,100)(100,200)\qbezier(114.286,0)(114.286,100)(114.286,200)\qbezier(128.571,0)(128.571,100)(128.571,200)\qbezier(142.857,0)(142.857,100)(142.857,200)\qbezier(157.143,0)(157.143,100)(157.143,200)\qbezier(171.429,0)(171.429,100)(171.429,200)\qbezier(185.714,0)(185.714,100)(185.714,200)\qbezier(200,0)(200,100)(200,200)}%
+%%siatka pozioma
+\textcolor{szary}{\qbezier(0,10)(100,10)(200,10)\qbezier(0,20)(100,20)(200,20)\qbezier(0,30)(100,30)(200,30)\qbezier(0,40)(100,40)(200,40)\qbezier(0,50)(100,50)(200,50)\qbezier(0,60)(100,60)(200,60)\qbezier(0,70)(100,70)(200,70)\qbezier(0,80)(100,80)(200,80)\qbezier(0,90)(100,90)(200,90)\qbezier(0,100)(100,100)(200,100)\qbezier(0,110)(100,110)(200,110)\qbezier(0,120)(100,120)(200,120)\qbezier(0,130)(100,130)(200,130)\qbezier(0,140)(100,140)(200,140)\qbezier(0,150)(100,150)(200,150)\qbezier(0,160)(100,160)(200,160)\qbezier(0,170)(100,170)(200,170)\qbezier(0,180)(100,180)(200,180)\qbezier(0,190)(100,190)(200,190)\qbezier(0,200)(100,200)(200,200)}%
+{\put(201,3){$r_{gran}$}}%
+{\put(2,210){Accuracy}}%
+%%podzialka osi x
+\qbezier(14.2857,-2)(14.2857,0)(14.2857,2)\qbezier(28.5714,-2)(28.5714,0)(28.5714,2)\qbezier(42.8571,-2)(42.8571,0)(42.8571,2)\qbezier(57.1429,-2)(57.1429,0)(57.1429,2)\qbezier(71.4286,-2)(71.4286,0)(71.4286,2)\qbezier(85.7143,-2)(85.7143,0)(85.7143,2)\qbezier(100,-2)(100,0)(100,2)\qbezier(114.286,-2)(114.286,0)(114.286,2)\qbezier(128.571,-2)(128.571,0)(128.571,2)\qbezier(142.857,-2)(142.857,0)(142.857,2)\qbezier(157.143,-2)(157.143,0)(157.143,2)\qbezier(171.429,-2)(171.429,0)(171.429,2)\qbezier(185.714,-2)(185.714,0)(185.714,2)\qbezier(200,-2)(200,0)(200,2)
+{\put(-1,-7){0}}{\put(13.2857,-12){0.0714286}}{\put(27.5714,-7){0.142857}}{\put(41.8571,-12){0.214286}}{\put(56.1429,-7){0.285714}}{\put(70.4286,-12){0.357143}}{\put(84.7143,-7){0.428571}}{\put(99,-12){0.5}}{\put(113.286,-7){0.571429}}{\put(127.571,-12){0.642857}}{\put(141.857,-7){0.714286}}{\put(156.143,-12){0.785714}}{\put(170.429,-7){0.857143}}{\put(184.714,-12){0.928571}}{\put(199,-7){1}}
+\multiput(0,0)(0,20){10}{\qbezier(-2,20)(0,20)(2,20)}%%podzialka osi y
+\multiput(0,0)(0,10){20}{\qbezier(-1,10)(0,10)(1,10)}%%podzialka osi y
+{\put(-13,18){0.1}\put(-13,38){0.2}\put(-13,58){0.3}\put(-13,78){0.4}\put(-13,98){0.5}
+\put(-13,118){0.6}\put(-13,138){0.7}\put(-13,158){0.8}\put(-13,178){0.9}\put(-13,198){1.0}}%
+\put(0,0){\vector(1,0){210}}%% os x
+\put(0,0){\vector(0,1){220}}%% os y
+%%legenda
+%%wykresy
+\textcolor{green}{\qbezier(0,88.9856)(7.14286,88.9856)(14.2857,88.9856)
+\put(7.14286,88.9856){\circle{3}}\qbezier(14.2857,88.9856)(21.4286,88.9856)(28.5714,88.9856)
+\put(21.4286,88.9856){\circle{3}}\qbezier(28.5714,88.9856)(35.7143,126.667)(42.8571,164.348)
+\put(35.7143,126.667){\circle{3}}\qbezier(42.8571,164.348)(50,163.536)(57.1429,162.725)
+\put(50,163.536){\circle{3}}\qbezier(57.1429,162.725)(64.2857,165.392)(71.4286,168.058)
+\put(64.2857,165.392){\circle{3}}\qbezier(71.4286,168.058)(78.5714,168.319)(85.7143,168.58)
+\put(78.5714,168.319){\circle{3}}\qbezier(85.7143,168.58)(92.8571,167.826)(100,167.072)
+\put(92.8571,167.826){\circle{3}}\qbezier(100,167.072)(107.143,167.507)(114.286,167.942)
+\put(107.143,167.507){\circle{3}}\qbezier(114.286,167.942)(121.429,166.174)(128.571,164.406)
+\put(121.429,166.174){\circle{3}}\qbezier(128.571,164.406)(135.714,163.159)(142.857,161.913)
+\put(135.714,163.159){\circle{3}}\qbezier(142.857,161.913)(150,161.507)(157.143,161.101)
+\put(150,161.507){\circle{3}}\qbezier(157.143,161.101)(164.286,160.609)(171.429,160.116)
+\put(164.286,160.609){\circle{3}}\qbezier(171.429,160.116)(178.571,160.203)(185.714,160.29)
+\put(178.571,160.203){\circle{3}}\qbezier(185.714,160.29)(192.857,160.29)(200,160.29)
+\put(192.857,160.29){\circle{3}}}%
+\textcolor{blue}{\qbezier(0,88.9854)(7.14286,88.9854)(14.2857,88.9854)
+\put(7.14286,88.9854){\circle*{3}}\qbezier(14.2857,88.9854)(21.4286,88.9854)(28.5714,88.9854)
+\put(21.4286,88.9854){\circle*{3}}\qbezier(28.5714,88.9854)(35.7143,88.9854)(42.8571,88.9854)
+\put(35.7143,88.9854){\circle*{3}}\qbezier(42.8571,88.9854)(50,88.9854)(57.1429,88.9854)
+\put(50,88.9854){\circle*{3}}\qbezier(57.1429,88.9854)(64.2857,114.899)(71.4286,140.812)
+\put(64.2857,114.899){\circle*{3}}\qbezier(71.4286,140.812)(78.5714,147.855)(85.7143,154.899)
+\put(78.5714,147.855){\circle*{3}}\qbezier(85.7143,154.899)(92.8571,160.783)(100,166.667)
+\put(92.8571,160.783){\circle*{3}}\qbezier(100,166.667)(107.143,166.754)(114.286,166.84)
+\put(107.143,166.754){\circle*{3}}\qbezier(114.286,166.84)(121.429,165.942)(128.571,165.043)
+\put(121.429,165.942){\circle*{3}}\qbezier(128.571,165.043)(135.714,163.449)(142.857,161.855)
+\put(135.714,163.449){\circle*{3}}\qbezier(142.857,161.855)(150,161.073)(157.143,160.29)
+\put(150,161.073){\circle*{3}}\qbezier(157.143,160.29)(164.286,159.681)(171.429,159.072)
+\put(164.286,159.681){\circle*{3}}\qbezier(171.429,159.072)(178.571,159.188)(185.714,159.304)
+\put(178.571,159.188){\circle*{3}}\qbezier(185.714,159.304)(192.857,159.304)(200,159.304)
+\put(192.857,159.304){\circle*{3}}}%
+\textcolor{black}{\qbezier(0,88.9856)(7.14286,88.9856)(14.2857,88.9856)
+\qbezier(14.2857,88.9856)(21.4286,88.9856)(28.5714,88.9856)
+\qbezier(28.5714,88.9856)(35.7143,88.9856)(42.8571,88.9856)
+\qbezier(42.8571,88.9856)(50,118.319)(57.1429,147.652)
+\qbezier(57.1429,147.652)(64.2857,156.087)(71.4286,164.522)
+\qbezier(71.4286,164.522)(78.5714,165.101)(85.7143,165.681)
+\qbezier(85.7143,165.681)(92.8571,165.13)(100,164.58)
+\qbezier(100,164.58)(107.143,166.87)(114.286,169.159)
+\qbezier(114.286,169.159)(121.429,168.145)(128.571,167.131)
+\qbezier(128.571,167.131)(135.714,162.696)(142.857,158.261)
+\qbezier(142.857,158.261)(150,158.667)(157.143,159.073)
+\qbezier(157.143,159.073)(164.286,158.841)(171.429,158.609)
+\qbezier(171.429,158.609)(178.571,158.841)(185.714,159.072)
+\qbezier(185.714,159.072)(192.857,158.986)(200,158.899)
+\textcolor{green}{\qbezier(90,216)(100,216)(110,216) \put(100,216){\circle{3}} \put(111,215){covering by granules of minimal size}}
+\textcolor{blue}{\qbezier(88,206)(93,206)(108,206) \put(98,206){\circle*{3}} \put(109,205){covering by granules of maximal size}}
+\textcolor{black}{\qbezier(86,211)(91,211)(106,211) \put(107,210){covering by granules of average size}}
+}%
+\end{picture}}
+\end{center}
+\end{figure}
+
+\clearpage
+
+\section{Do wykonania w TeXu}
+Przepisz do formatu TeXa wskazane przez wykladowcê Tabele, oraz wyœwietl wskazane przez wyk³adowcê obrazki wyszukane w sieci Internet.
+
+\begin{table}[here]
+\centering \caption{Przyk³adowy system decyzyjny $(U,A,d)$, modeluj¹cy problem diagnozy medycznej, której efektem jest decyzja o wykonaniu lub nie wykonaniu operacji wyciêcia wyrostka robaczkowego, $U=\{u_1,u_2,\ldots,u_{10}\}, A=\{a_1,a_2\}, d \in D=\{TAK,NIE\}$}
+\label{DecisionSystem-aprox}
+\begin{tabular}{c|ccc}
+  \hline
+  \hline
+  Pacjent & $B{\rm ó}l\ brzucha$ & $Temperatura\ cia{\rm ³}a$ & $Operacja$ \\
+  \hline
+  $u_1$ & Mocny & Wysoka & Tak \\
+  $u_2$ & {\rm Œ}redni & Wysoka & Tak \\
+  $u_3$ & Mocny & {\rm Œ}redna & Tak \\
+  $u_4$ & Mocny & Niska & Tak \\
+  $u_5$ & {\rm Œ}redni & {\rm Œ}redna & Tak \\
+  $u_6$ & {\rm Œ}redni & {\rm Œ}redna & Nie \\
+  $u_7$ & Ma³y & Wysoka & Nie \\
+  $u_8$ & Ma³y & Niska & Nie \\
+  $u_9$ & Mocny & Niska & Nie \\
+  $u_10$ & Ma³y & {\rm Œ}redna & Nie \\
+  \hline
+  \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[here]
+\centering \caption{Przyk³adowy system decyzyjny $(U,A,d), U=\{u_1,u_2,\ldots,u_17\}, A=\{a_1,a_2,\ldots,a_5\}, d \in D=\{1,2\}$}
+\label{DecisionSystemv1}
+\begin{tabular}{c|cccccc}
+  \hline
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} \ldots
+  no. & $a_1$ & $a_2$ & $a_3$ & $a_4$ & $a_5$ & $d$ \\
+  \hline
+  $u_1$ & 2 & 2 & 1 & 2 & 3 & 1 \\
+  $u_2$ & 3 & 2 & 2 & 1 & 3 & 2 \\
+  $u_3$ & 1 & 1 & 3 & 2 & 2 & 2 \\
+  $u_4$ & 1 & 1 & 1 & 1 & 2 & 1 \\
+  $u_5$ & 3 & 1 & 2 & 2 & 1 & 2 \\
+  $u_6$ & 1 & 2 & 3 & 3 & 1 & 2 \\
+  $u_7$ & 1 & 1 & 1 & 1 & 2 & 1 \\
+  $u_8$ & 1 & 1 & 2 & 1 & 2 & 1 \\
+  $u_9$ & 2 & 1 & 1 & 2 & 3 & 1 \\
+  \hline
+  \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[here]
+\centering \caption{Baza hipotetycznych regu³ dla sterowania suwnic¹ obs³uguj¹c¹ odwrócone wahad³o. Wartoœci zawarte w tabeli symbolizuj¹ si³ê przesuwu wózka, obliczan¹ na bazie wartoœci wejœciowych odchylenia od pionu i zmiany odchylenia w czasie}\label{bazaregul}
+\begin{tabular}{c|ccccc}
+\hline
+\hline
+odchylenie/zmiana\_odchylenia & $DU$ & $MU$ & $Z$ & $MD$ & $DD$\\
+\hline
+$DU$ & $DD$ & $DD$ & $DD$ & $MD$ & $Z$ \\
+$MU$ & $DD$ & $DD$ & $MD$ & $Z$ & $MU$ \\
+$Z$ & $DD$ & $MD$ & $Z$ & $MU$ & $DU$ \\
+$MD$ & $MD$ & $Z$ & $MU$ & $DU$ & $DU$ \\
+$DD$ & $Z$ & $MU$ & $DU$ & $DU$ & $DU$ \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[here]
+\centering \caption{Bramka AND} \label{AND}
+\begin{tabular}{c|c|c}
+\hline
+\hline
+$x_1$ & $x_2$ & $(x_1 AND x_2)$ \\
+\hline
+$1$ & $1$ & $1$ \\
+$1$ & $0$ & $0$ \\
+$0$ & $1$ & $0$ \\
+$0$ & $0$ & $0$ \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\begin{tiny}
+\begin{center}
+\caption{Macierz nieodró¿nialnoœci wzglêdna systemu $(U,A,d)$}\label{IndMatrixAlgWycz}
+\begin{tabular}{ c | c | c | c | c | c  | c  | c  | c  }
+  \hline
+  \hline
+  $$ & $u_1$ & $u_2$ & $u_3$ & $u_4$ & $u_5$ & $u_6$ & $u_7$ & $u_8$ \\
+  \hline
+  \multirow{2}{*}{$u_1$} & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$\phi$} & $a_1,a_2,a_3,$ & \multirow{2}{*}{$\phi$} & $a_1,a_2,a_4,$ & \multirow{2}{*}{$\phi$} & $a_1,a_2,a_5,$ & \multirow{2}{*}{$\phi$}  \\
+  $$ & $$ & $$ & $a_6$ & $$ & $a_6$ & $$ & $a_6$ & $$ \\
+
+  $u_2$ & $\phi$ & $\phi$ & $a_1,a_2,a_3$ & $\phi$ & $a_1,a_2,a_4$ & $\phi$ & $a_1,a_2,a_5$ & $\phi$  \\
+  \multirow{2}{*}{$u_3$} & $a_1,a_2,a_3,$ & \multirow{2}{*}{$a_1,a_2,a_3$} & \multirow{2}{*}{$\phi$} & $a_1,a_2,a_3,$ & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$a_1,a_2,a_5$} & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$a_1,a_2,a_6$}  \\
+  $$ & $a_6$ & $$ & $$ & $a_4$ & $$ & $$ & $$ & $$ \\
+
+  \multirow{2}{*}{$u_4$} & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$\phi$} & $a_1,a_2,a_3,$ & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$a_1,a_2$} & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$a_1,a_2,a_5$} & \multirow{2}{*}{$\phi$}  \\
+  $$ & $$ & $$ & $a_4$ & $$ & $$ & $$ & $$ & $$ \\
+
+  \multirow{2}{*}{$u_5$} & $a_1,a_2,a_4,$ & \multirow{2}{*}{$a_1,a_2,a_4$} & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$a_1,a_2$} & \multirow{2}{*}{$\phi$} & $a_1,a_2,a_3,$ & \multirow{2}{*}{$\phi$} & $a_1,a_2,a_3,$  \\
+  $$ & $a_6$ & $$ & $$ & $$ & $$ & $a_4,a_5$ & $$ & $a_6$ \\
+
+  \multirow{2}{*}{$u_6$} & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$a_1,a_2,a_5$} & \multirow{2}{*}{$\phi$} & $a_1,a_2,a_3,$ & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$a_1,a_2,a_3$} & \multirow{2}{*}{$\phi$}  \\
+  $$ & $$ & $$ & $$ & $$ & $a_4,a_5$ & $$ & $$ & $$ \\
+
+  \multirow{2}{*}{$u_7$} & $a_1,a_2,a_5,$ & \multirow{2}{*}{$a_1,a_2,a_5$} & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$a_1,a_2,a_5$} & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$a_1,a_2,a_3$} & \multirow{2}{*}{$\phi$} & $a_1,a_2,a_3,$  \\
+  $$ & $a_6$ & $$ & $$ & $$ & $$ & $$ & $$ & $a_4,a_6$ \\
+
+  \multirow{2}{*}{$u_8$} & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$\phi$} & \multirow{2}{*}{$a_1,a_2,a_6$} & \multirow{2}{*}{$\phi$} & $a_1,a_2,a_3,$ & \multirow{2}{*}{$\phi$} & $a_1,a_2,a_3,$ & \multirow{2}{*}{$\phi$}  \\
+  $$ & $$ & $$ & $$ & $$ & $a_6$ & $$ & $a_4,a_6$ & $$ \\
+  \hline
+  \hline
+\end{tabular}
+\end{center}
+\end{tiny}
+\end{table}
+
+%%\begin{center}
+\begin{table}[!h]
+\vspace{-13pt}
+\centering \caption{An information table of the examined data sets (from \cite{tunedit} platform); data1 = anthracyclineTaxaneChemotherapy, data2 = BurkittLymphoma, data3 = HepatitisC, data4 = mouseType, data5 = ovarianTumour, data6 = variousCancers\_final}\label{data-info}
+\begin{tiny}
+\begin{tabular}{lcccc}
+\hline
+\noalign{\smallskip}
+$Data.name$ & $No.of.attr$ & $No.of.obj$ & $No.of.dec.class$ & $The.dec.class.details$
+\\
+\hline
+$data1$ & $61359$ & $159$ & $2$ & $1(59.7\%),2(40.2\%)$ \\
+$data2$ & $22283$ & $220$ & $3$ & $3(58.1\%),2(20\%),1(21.8\%)$ \\
+$data3$ & $22277$ & $123$ & $4$ & $2(13.8\%),4(15.4\%),1(33.3\%),3(37.3\%)$ \\
+$\multirow{2}{*}{data4}$ & $\multirow{2}{*}{45101}$ & $\multirow{2}{*}{214}$ & $\multirow{2}{*}{7}$ & $3(9.8\%),2(32.2\%),7(7.4\%),6(18.2\%),$ \\
+$$ & $$ & $$ & $$ & $5(16.3\%),4(9.8\%),1(6\%)$ \\
+$data5$ & $54621$ & $283$ & $3$ & $3(86.5\%),1(6.3\%),2(7\%)$ \\
+$\multirow{2}{*}{data6}$ & $\multirow{2}{*}{54675}$ & $\multirow{2}{*}{383}$ & $\multirow{2}{*}{9}$ & $3(6.2\%),2(40.4\%),4(10.1\%),7(5.2\%),5(12.2\%),$\\
+$$ & $$ & $$ & $$ & $6(10.9\%),8(4.1\%),9(4.6\%),10(5.7\%)$ \\
+\hline
+\end{tabular}
+\end{tiny}
+%%\vspace{-30pt}
+\end{table}
+%%\end{center}
+
+\begin{center}
+\begin{table}
+\centering \caption{Leave One Out; Average balanced accuracy of classification for implemented methods; Examined data sets: anthracyclineTaxaneChemotherapy, BurkittLymphoma, HepatitisC, mouseType, ovarianTumour, variousCancers\_final; No.of.genes = number of classified genes, method = method's name}\label{MFM-all-average}
+\begin{tabular} {  c  c  c  c  c  c  c  c } \hline \hline
+$method \backslash No.of.genes$ & $10$ & $20$ & $50$ & $100$ & $200$ & $500$ & $1000$ \\
+\hline
+$MFM1$ & $0.746$ & $0.764$ & $0.79$ & $0.796$ & $0.795$ & $0.794$ & $0.782$ \\
+$MSF4$ & $0.651$ & $0.655$ & $0.699$ & $0.722$ & $0.751$ & $0.769$ & $0.776$ \\
+$SAM10$ & $\textbf{0.781}$ & $\textbf{0.817}$ & $\textbf{0.822}$ & $0.835$ & $0.83$ & $0.824$ & $0.808$ \\
+$SAM5$ \cite{artemRSKT11} & $0.718$ & $0.77$ & $0.815$ & $\textbf{0.841}$ & $\textbf{0.84}$ & $\textbf{0.846}$ & $\textbf{0.833}$ \\
+$MSF6$ \cite{artemISMIS11} & $0.718$ & $0.759$ & $0.789$ & $0.782$ & $0.781$ & $0.777$ & $0.783$ \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+\end{center}
+
+\begin{center}
+\begin{table}
+%\vspace{-30pt}
+\centering \caption{The Leaderboard of TunedIt Job Scheduling competition \cite{TunedIt}, Examined data sets: all from Tab. \ref{data-info};} \label{best-comparison}
+\begin{tabular} {  c  c  c  c  }
+\hline
+\noalign{\smallskip}
+$Rank$ & $Team$ & $Preliminary Result$ & $Final Result$ \\
+\noalign{\smallskip}
+\hline
+\noalign{\smallskip}
+$1$ & $jzbontar$ & $0.043801$ & $0.043878$ \\
+$2$ & $Piotr\ Czerpak$ & $0.043801$ & $0.043878$ \\
+$3$ & $TEAM\_CODES$ & $0.043801$ & $0.043878$ \\
+$4$ & $Notissa$ & $0.043801$ & $0.043878$ \\
+$5$ & $Jannes\ Verstichel$ &$ 0.043801$ & $0.043878$ \\
+$6$ & $artem$ & $0.043801$ & $0.043878$ \\
+$7$ & $podludek$ & $0.043806$ & $0.044216$ \\
+$8$ & $rabitic$ & $0.044403$ & $0.044680$ \\
+$9$ & $Rav$ & $0.047203$ & $0.046747$ \\
+$10$ & $Baseline$ & $0.197606$ & $0.195016$ \\
+$11$ & $Herald\ Kllapi$ & $0.197606$ & $0.195016$ \\
+$12$ & $Xenopax$ & $0.197606$ & $0.195016$ \\
+$13$ & $cpreston$ & $0.197606$ & $0.195016$ \\
+$14$ & $Oscar$ & $0.197606$ & $0.195016$ \\
+$15$ & $ga1$ & $0.197606$ & $0.195016$ \\
+$16$ & $Tri\ Kurniawan\ Wijaya$ & $0.197606$ & $0.195016$ \\
+\hline
+\end{tabular}
+%\vspace{-40pt}
+\end{table}
+\end{center}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{c | c | c | c | c | c | c}
+\hline
+\multirow{2}{*}{No. of visual words} & \multicolumn{6}{c}{Dataset}\\
+ & 1 & 2 & 3 & 4 & 5 & 6\\
+\hline
+  50 & 61.27\% & 88.92\% & 77.88\% & 87.89\% & 92.04\% & 96.65\% \\
+ 100 & 64.60\% & 89.40\% & 80.41\% & 92.05\% & 95.81\% & 97.70\% \\
+ 200 & 69.67\% & 89.42\% & 76.40\% & 92.06\% & 94.14\% & 98.74\% \\
+ 500 & 72.97\% & 88.41\% & 76.88\% & 93.30\% & 97.91\% & 98.32\% \\
+1000 & 73.80\% & 89.91\% & 78.90\% & 92.87\% & 97.49\% & 98.74\% \\
+2000 & 77.17\% & 90.42\% & 80.92\% & 92.05\% & 97.48\% & 99.58\% \\
+5000 & 58.80\% & 93.95\% & 79.91\% & 93.30\% & 97.90\% & 98.32\% \\
+\hline
+\end{tabular}
+\caption{Final classification results for datasets 1--3 using Euclidean normalization.}
+\label{tab:results_euclid}
+\end{table}
+
+\begin{center}\begin{table}
+\caption{ACC - table - 5 x CV - 5; $r_{gran}=$ Granulation radius, $T.acc=$ Total accuracy, $T.cov=$ Total coverage, $M.gran=$ The mean percentage size of classification granule in training system}
+\begin{tabular} { c c c c c c } \hline \hline
+$accCovMin$ & $SD$ & $accCovMax$ & $SD$ & $accCovAverage$ & $SD$ \\
+\hline
+$0.444928$ & $0$ & $0.444927$ & $0$ & $0.444928$ & $0$ \\
+$0.444928$ & $0$ & $0.444927$ & $0$ & $0.444928$ & $0$ \\
+$0.444928$ & $0$ & $0.444927$ & $0$ & $0.444928$ & $0$ \\
+$0.821739$ & $0.008696$ & $0.444927$ & $0$ & $0.444928$ & $0$ \\
+$0.813624$ & $0.004752$ & $0.444927$ & $0$ & $0.73826$ & $0.040115$ \\
+$0.840291$ & $0.006608$ & $0.704058$ & $0.014723$ & $0.822609$ & $0.010667$ \\
+$0.842899$ & $0.003594$ & $0.774493$ & $0.010665$ & $0.828406$ & $0.003942$ \\
+$0.835362$ & $0.003014$ & $0.833333$ & $0.002898$ & $0.822898$ & $0.003826$ \\
+$0.839711$ & $0.005565$ & $0.834202$ & $0.003361$ & $0.845797$ & $0.005102$ \\
+$0.822029$ & $0.002665$ & $0.825217$ & $0.005912$ & $0.835653$ & $0.006261$ \\
+$0.809564$ & $0.005681$ & $0.809276$ & $0.005333$ & $0.791305$ & $0.006377$ \\
+$0.805507$ & $0.008347$ & $0.80145$ & $0.005217$ & $0.795363$ & $0.007883$ \\
+$0.800581$ & $0.007419$ & $0.795361$ & $0.004405$ & $0.793044$ & $0.007188$ \\
+$0.80145$ & $0.008116$ & $0.796522$ & $0.004753$ & $0.795362$ & $0.007304$ \\
+$0.801449$ & $0.006377$ & $0.796522$ & $0.005332$ & $0.794493$ & $0.007188$ \\
+\hline \hline
+\end{tabular}
+\end{table}
+\end{center}
+
+\begin{center}
+\rowcolors{1}{red}{green}
+\begin{tabular}{lll}
+xxx     & xxx   & 333 \\
+xxx    & xzx  & fdf\\
+yyy     & zzz   & gdf \\
+yyy    & zzz  & dgd\\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\rowcolors{1}{green}{pink}
+
+\begin{tabular}{lll}
+odd     & odd   & odd \\
+even    & even  & even\\
+odd     & odd   & odd \\
+even    & even  & even\\
+\end{tabular}
+\end{center}
+
+\end{document}

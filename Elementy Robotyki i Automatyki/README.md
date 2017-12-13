@@ -14,6 +14,11 @@
 5. Do 10 tygodnia sprawdzanie kodu A* będzie na wyrywki, losowe kody programów będą sprawdzane, 
 6. Po 10 tygodniu pracy wszystkie kody będą sprawdzane szczegółowo i kod będzie musiał być uruchamialny na komputerach laboratoryjnych. 
 
+## Zaliczenie A* dla osób, które nie zdążyły przed 10 tygodniem
+
+- 1.5h na napisanie algorytmu bez pomocy naukowych i internetu
+- Zaliczanie na swoich zajęciach w dniu 2018.01.10
+
 ## Zasady obowiązujące w labolatorium
 
 1. Prosimy o nie spożywanie posiłków, aby uniknąć zniszczenia sprzętu, 

@@ -18,6 +18,7 @@
 
 - 1.5h na napisanie algorytmu bez pomocy naukowych i internetu
 - Zaliczanie na swoich zajęciach w dniu 2018.01.10
+- Studenci **niestacjonarni** mają zaliczenie w dniu 2018.01.13
 
 ## Zasady obowiązujące w labolatorium
 

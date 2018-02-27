@@ -2,7 +2,7 @@
 
 ## Teoria
 
-1. Prowadzący przedstawia informacje o następujących strukturach:
+1. Student zna teorię z programowania obiektowego:
     - Obiekt,
     - Klasa,
     - Enkapsulacja danych,

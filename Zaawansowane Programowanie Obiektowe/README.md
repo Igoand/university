@@ -11,6 +11,10 @@
 
 Do ustalenia.
 
+## Zapis drużyn projektowych
+
+- [Formularz do wypełnienia](https://goo.gl/forms/btbhsIH9ivdBqBZA3)
+
 ## Ocena projektu (20pkt)
 
 **Projekt powinien zawierać:**

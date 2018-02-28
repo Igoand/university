@@ -8,6 +8,11 @@
     - Enkapsulacja danych,
     - Metody i przeciążanie,
     - Atrybuty statyczne.
+    
+## WPF
+
+- [WPF tutorial](http://www.wpf-tutorial.com/)
+- [Kolejny](https://www.codeproject.com/Articles/140611/WPF-Tutorial-Beginning)
 
 ## Zadania
 

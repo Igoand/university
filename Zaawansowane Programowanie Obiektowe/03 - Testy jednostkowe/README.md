@@ -17,6 +17,11 @@
 ## Wymagania
 
 - Do projektu należy dodać bibliotekę **NUnit** za pomocą **NuGet**'a
+- Kroki potrzebne do zainstalowania:
+   - TOOLS
+   - NuGet Package Manager
+   - Package Manager Console
+   - `Install-Package NUnity -Version 3.6.0`
 
 ## Zadania
 

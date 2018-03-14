@@ -21,7 +21,7 @@
    - TOOLS
    - NuGet Package Manager
    - Package Manager Console
-   - `Install-Package NUnity -Version 3.6.0`
+   - `Install-Package NUnit -Version 3.6.0`
 
 ## Zadania
 

@@ -31,10 +31,10 @@
 
 ### Zadanie 2
 
-1. Stwórz interface **ITelefon**, który będzie posiadał atrybuty:
+1. Stwórz klasę abstrakcyjną **Telefon**, która będzie posiadała atrybuty:
     - Metody: WybierzNumer, WyslijWiadomosc, PokazTyp,
-2. Stwórz klasę **ZwyklyTelefon**, który dziedziczy po **ITelefon**,
-3. Stwórz klasę **Dekorator**, która będzie dziedziczyć po **ITelefon** i implementować założenia wzorca projektowego,
+2. Stwórz klasę **ZwyklyTelefon**, który dziedziczy po **Telefon**,
+3. Stwórz klasę **Dekorator**, która będzie dziedziczyć po **ZwyklyTelefon** i implementować założenia wzorca projektowego,
 4. Stwórz klasę **Smartphone**, która będzie dziedziczyć po **Dekorator**
     - W konstruktorze przyjmij **ZwyklyTelefon** oraz rodzaj telefonu,
 5. Dodaj dwie dodatkowe metody dla klasy **Smartphone**, które nie powinny być dostępne dla **ZwykłyTelefon**,
